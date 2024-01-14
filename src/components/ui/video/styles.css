@@ -1,0 +1,12 @@
+.test .vjs-fill {
+  border-radius: 11px;
+}
+
+.test .video-js .vjs-tech {
+  border-radius: 11px; /* 원하는 radius 값으로 설정 */
+}
+
+.test .video-js .vjs-control-bar {
+  border-bottom-left-radius: 11px; /* 원하는 radius 값으로 설정 */
+  border-bottom-right-radius: 11px; /* 원하는 radius 값으로 설정 */
+}

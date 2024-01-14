@@ -1,0 +1,12 @@
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px; /* 스크롤바의 너비 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* 스크롤바 트랙의 배경색 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25); /* 스크롤바의 색상 */
+  border-radius: 1px; /* 스크롤바의 모서리 둥글기 */
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-size: 62.5%;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px; /* 스크롤바의 너비 */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f5f2f2; /* 스크롤바 트랙의 배경색 */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #747474; /* 스크롤바의 색상 */
+    border-radius: 11px;
+  }
+}

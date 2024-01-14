@@ -1,0 +1,184 @@
+{
+  "banner": {
+    "banner_image": "/images/experience/labkid_banner.png",
+    "season": ["랩키드 시즌 5", "LABKID Season5"],
+    "title": "메디컬_둠스데이",
+    "intro": "다양한 진로들을 체험해보고 나에게 맞는 진로를 찾아보세요.\n 적성에 맞는 흥미로운 진로들을 만나 보실 수 있습니다. "
+  },
+  "contents": [
+    {
+      "title": "STEP1 퍼스트 콘택트",
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "퍼스트 콘택트 콘텐츠를 통해 랩키드 시즌5의 전체적 흐름과 VR 기기 조작 방법에 대해 알아봅시다.",
+      "tag": "#진로적성검사 #VR기기_조작법",
+      "synopsis": {
+        "title": "EP1 퍼스트 콘택트",
+        "description": "VR 기기 사용법을 익히면서, 미래진로직업 적성 테스트를 통해 자신의 미래 의료 직업 테스트를 해봅시다."
+      },
+      "video_uid": "810430564",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220412_98/1649749961066vVzPf_JPEG/QwOaJY1fH6xXoL2XYBFT.jpg"
+    },
+    {
+      "title": "STEP2 AI, IoT 스마트 시티",
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "미래의 자율주행자동차에는 어떤 기능이 탑재되어 있을까?\n미래의 스마트시티는 어떤 모습일까?",
+      "tag": "#진로적성검사 #VR기기_조작법",
+      "synopsis": {
+        "title": "EP2 AI, IoT 스마트 시티",
+        "description": "스마트시티 첨단 병원의 인턴 의사가 되어 자율주행자동차를 타고 스마트시티를 통과해 병원으로 향해봅시다. 병원으로 이동하면서, 미래의 자동차와 도시의 변화에 대해 체험해봅시다."
+      },
+      "video_uid": "810430628",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220504_261/1651634672428CQNoH_JPEG/GnlELChWo2DtHu5836Ve.jpg"
+    },
+    {
+      "title": "STEP3 병원 견학",
+      "job_intro": {
+        "current_job": "해당 직업: 레지던트"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "미래병원엔 어떤 시설들이 있을까요?\n소생실, 중환자실 등 미래 병원의 여러 곳을 견학해봅시다.",
+      "tag": "#왕진로봇 #소생실 #중환자실",
+      "synopsis": {
+        "title": "EP3 병원 견학",
+        "description": "스마트시티 첨단 병원의 레지던트가 되어 첨단 병원 시설을 견학해봅시다. 과학기술이 발전하면서 병원에도 많은 변화가 찾아왔습니다. 더욱 청결하고, 더 많은 환자들을 수용할 수 있는 시설로 지금도 계속해서 변모하고 있죠. 스마트시티 미래 첨단 병원에서 본격적인 환자 진료를 하기 전, 왕진로봇과 함께 병원의 구조를 파악하는 시간을 가져봅시다."
+      },
+      "video_uid": "810430659",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220504_171/1651634861938T16NY_JPEG/91ikImfcDnnG5fMGeVvT.jpg"
+    },
+    {
+      "title": "STEP4 해부학 교실",
+      "job_intro": {
+        "current_job": "해당 직업: 해부학연구원"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "우리 몸의 여러 기관과 장기들은 어떻게 움직이는 걸까?\n서로 연계되는 인체의 여러 장기와 기관들을 한 데 묶은 것을 '계통'이라고 합니다. 우리 몸에는 어떤 계통들이 존재할까요?",
+      "tag": "#호흡계 #근육계 #순환계 #배설계 #골격계 #신경계 #소화계 #해부학",
+      "synopsis": {
+        "title": "EP4 해부학 교실",
+        "description": "스마트시티 첨단 병원의 해부학연구원이 되어 인체 해부를 진행해봅시다. 아픈 사람을 치료하기 위해선, 인체의 구조를 정확히 파악하는 것이 중요합니다. 설명서 없이 브릭을 조립할 수 없듯 말이죠. 우리 몸의 기관, 장기, 뼈 등을 가상현실에서 생생하게 만나보고, 각 계통이 어떻게 작동하는지 알아보고, 장기들을 해부하고조립해봅시다."
+      },
+      "video_uid": "810430943",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220412_193/1649750546165RusU2_JPEG/K1Q5TJ3vy8QKLggiNbfV.jpg"
+    },
+    {
+      "title": "STEP5-1 병원 기기 점검",
+      "job_intro": {
+        "current_job": "해당 직업: 의공기사"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "미래 첨단 병원에는 어떤 의료 기기들이 있을까?\n위기의 순간, 환자들을 치료하고 살려낼 의료장비들을 직접 점검해보자.",
+      "tag": "#의공기사 #자동제세동기 #약물주입기",
+      "synopsis": {
+        "title": "EP5-1 병원기기 점검",
+        "description": "스마트시티 첨단 병원의 전담 의공기사가 되어 병원 의료기기 점검을  진행해봅시다. 환자를 치료하기 위해선 실력 있는 의사들을 배치하는 것도 중요하지만, 적재적소에 필요한 의료 기기들을 보급해 의사들이 최상의 효율을 낼 수 있도록 하는 것도 중요합니다. 의료기기를 점검하면서 의공기사들의 업무에 대해 알아보고 병원의 어떤 곳에 어떤 의료기기가 배치되는지도 알아봅시다."
+      },
+      "video_uid": "810431124",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220418_153/1650272048513EpA1M_JPEG/BvcyeOSaaCzAWC2hImHN.jpg"
+    },
+    {
+      "title": "STEP5-2 첨단 차량 내 수술",
+      "job_intro": {
+        "current_job": "해당 직업: 응급구조사"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "구급차가 다친 사람을 향해 달려올 때, 뒷좌석에 항상 탑승해 있는 응급구조사는 어떤 역할을 할까? 미래의 구급차는 어떻게 발전되어 있을까?",
+      "tag": "#첨단구급차 #응급구조 #구급대원",
+      "synopsis": {
+        "title": "EP5-2 첨단 차량 내 수술",
+        "description": "스마트시티 첨단 병원의 응급구조사가 되어 환자 구조를 진행해봅시다. 미래의 구급차는 어떤 설비가 갖춰져 있을까요? 응급구조사가 되어 골절상을 입을 환자를 안전하게 구조한 후, 미래의 첨단 구급차에서 심장 제세동과 응급수술을 진행해봅시다."
+      },
+      "video_uid": "810431152",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220418_187/1650272202175hHdAD_JPEG/Om3BT5Yt8vqmsLoXWYWE.jpg"
+    },
+    {
+      "title": "STEP5-3 무의식 환자 간호",
+      "job_intro": {
+        "current_job": "해당 직업: 중환자실 담당 간호사"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "의식이 없는 환자는 어떻게 간호해야 할까?\n의식이 없는 환자에게 공급하는 산소는 어떻게 전달되는지 알아보고, 인공호흡기를 작동시켜보자.",
+      "tag": "#무의식 환자 간호 #인공호흡기",
+      "synopsis": {
+        "title": "EP5-3 무의식 환자 간호하기",
+        "description": "스마트시티 첨단 병원의 중환자실 간호사가 되어 무의식 환자를 간호해봅시다. 의식이 없는 환자는 영양 공급, 너무 오래 누워 있어 생길 수 있는 피부병 등 다양한 부분에서의 관리가 필요한데요, 이번 스텝에서는 무의식 환자에게 인공호흡기를 이용해 산소를 공급하는 법에 대해 알아봅시다."
+      },
+      "video_uid": "810431242",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220418_5/165027240230183mpW_JPEG/stu0pN8TzWpP9qvBXbLe.jpg"
+    },
+    {
+      "title": "STEP5-4 MR 방사선 치료",
+      "job_intro": {
+        "current_job": "해당 직업: 방사선사"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "암세포를 외부에서 제거하려면 어떤 방법을 사용해야 할까요?\n병원에서 사용하는 방사선 장비는 X-ray, CT 말고는 어떤 것이 있을까요?",
+      "tag": "#MR라이낙 #IMRT #방사선치료",
+      "synopsis": {
+        "title": "EP5-4 방사선 치료",
+        "description": "스마트시티 첨단 병원의 방사선사가 되어 암 환자를 방사선 요법으로 치료해봅시다. 과거에는 치료할 수 없는 병으로 여겨졌던 병인 암. 이러한 암도 약물치료 등으로 치료하는 시대가 왔는데요, 그런데 방사선 의료기술을 X-ray 등뿐만이 아니라 암 치료에도 사용할 수 있다는 사실, 알고 계셨나요? MR라이낙과 IMRT 등 방사선 장비를 이용해 암환자를 치료해봅시다."
+      },
+      "video_uid": "810431307",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220418_30/1650272594559WP0Me_JPEG/s4pQsUriIUJp7vR4smYx.jpg"
+    },
+    {
+      "title": "STEP5-5 호흡기 실습 매뉴얼",
+      "job_intro": {
+        "current_job": "해당 직업: 중환자실 간호사, 의공기사"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "인공호흡기는 어떤 부품으로 이루어져 있을까요?\n인공호흡기는 산소를 공급하는 역할 말고 어떤 역할을 할까요?",
+      "tag": "#인공호흡기",
+      "synopsis": {
+        "title": "EP5-5 인공호흡기 실습",
+        "description": "스마트시티 첨단 병원의 의공기사가 되어 인공호흡기의 구조를 파악해봅시다.중환자실, 소생실, 구급차 등에서 사용되는 인공호흡기를 분해해 구조를 파악해봅시다. 인공호흡기가 산소 공급 말고도 어떤 역할을 하는지 알아봅시다."
+      },
+      "video_uid": "810431356",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220419_163/1650338822476wSrnq_JPEG/lXJa7o8MNBT9HdFJ3203.jpg"
+    },
+    {
+      "title": "STEP5-6 AED 실습 매뉴얼",
+      "job_intro": {
+        "current_job": "해당 직업: 응급구조사, 의공기사"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "AED는 어떤 부품으로 이루어져 있을까요?\nAED는 어떤 상황에서 어떤 역할을 할까요?",
+      "tag": "#AED",
+      "synopsis": {
+        "title": "EP5-6 AED 실습",
+        "description": "스마트시티 첨단 병원의 의공기사가 되어 AED의 구조를 파악해봅시다. 중환자실, 소생실, 구급차 등에서 사용되는 AED를 분해해 구조를 파악해봅시다. AED는 어떤 부품으로 이루어져 있는지, 위급상황에서 어떻게 사용하는지도 알아봅시다."
+      },
+      "video_uid": "810431371",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220419_245/1650339023717kCeTk_JPEG/A9ULyxdtYc6GzpiwrhGI.jpg"
+    },
+    {
+      "title": "STEP5-7 다빈치 실습 매뉴얼",
+      "job_intro": {
+        "current_job": "해당 직업: 로봇 수술 전문의"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "미래의 수술을 연습해봅시다.\n다빈치 수술 로봇을 이용한 수술의 정교함을 체험해봅시다.",
+      "tag": "#다빈치수술로봇",
+      "synopsis": {
+        "title": "EP5-7 다빈치 수술 로봇 실습",
+        "description": "스마트시티 첨단 병원의 로봇 수술 전문의가 되어 다빈치 수술 로봇을 다루는 방법을 익혀봅시다. 다빈치 수술 로봇에 탑승하여 로봇을 다루는 법을 익혀봅시다. 다빈치 수술 로봇의 다양한 로봇팔을 계속 바꿔가면서 포도알을 건드리지 않고 껍질을 제거한 후, 다시 봉합해봅시다."
+      },
+      "video_uid": "810431398",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220419_289/1650342733877eYcYY_JPEG/I4Ohf3gCwSbnteAnler6.jpg"
+    },
+    {
+      "title": "STEP6 다빈치 로봇 심장 이식 수술",
+      "job_intro": {
+        "current_job": "해당 직업: 로봇 수술 전문의"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "EP5-7에서 학습한 내용을 복습해봅시다.\n미래의 수술은 어떤 방식으로 이뤄지는지 알아봅시다.",
+      "tag": "#다빈치수술로봇",
+      "synopsis": {
+        "title": "EP6 심장 이식 수술",
+        "description": "스마트시티 첨단 병원의 로봇 수술 전문의가 되어 다빈치 수술 로봇을 이용해 심장 이식 수술을 진행해봅시다. 다빈치 수술 로봇에 탑승하여 심장 이식 수술을 진행합니다. 환자의 목숨이 달린 중요한 수술이니 만큼, 어느 때보다 신중한 수술이 요구됩니다.\n원래 환자의 몸에 있던 심장을 떼어내고 인공 생명 유지 장치를 부착한 후, 인공 심장을 환자에게 이식하고 장치를 제거한 뒤 절개 부위를 봉합하는 것으로 수술을 마무리할 수 있습니다. 다빈치 수술 로봇을 이용해 환자를 살려내보세요!"
+      },
+      "video_uid": "810431459",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220504_220/1651639223999V2dqc_JPEG/O9Q5X70Vn3kXRQi5qIYr.jpg"
+    }
+  ]
+}

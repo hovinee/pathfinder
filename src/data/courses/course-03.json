@@ -1,0 +1,12 @@
+{
+  "thumbnail": "https://cdn.imweb.me/thumbnail/20230426/aa122385393fb.png",
+  "title": "(수강생용)Project Workshop- 유니티 타임라인과 애니메이션 활용하기",
+  "tag": "HOT",
+  "price": "50,000",
+  "summary": "이 강좌는 유니티 TimeLine과 Animation 활용하는 프로젝트 코스입니다.",
+  "intro": "유니티 자체 기능 중 큰 빈도를 차지하는 주요기능인 타임라인과 애니메이션 기능을 학습합니다",
+  "purpose": "유니티 타임라인(Timeline)의 정의와 필요성을 학습할 수 있습니다. 유니티 타임라인(Timeline)사용법을 실습할 수 있습니다. 유니티 타임라인(Timeline)을 이용하여 본인이 원하는 영상물을 기획, 제작할 수 있습니다.",
+  "target": "유니티를 갓 입문한 주니어 프로그래머 유니티 시스템을 고려해야하는 모델링 디자이너",
+  "categroy": ["영상", "프로그래밍"],
+  "video_uid": "810386915"
+}

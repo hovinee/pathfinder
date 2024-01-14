@@ -1,0 +1,26 @@
+@startuml
+skinparam BoxPadding 10
+
+actor client
+
+box app
+participant MyCourses.tsx
+end box
+
+box api
+participant route.ts
+end box
+
+database mongo
+
+== GET ==
+client -> MyCourses.tsx: submit
+MyCourses.tsx -> route.ts: 유저 강의 조회 (수강신청한)
+route.ts --> mongo: request
+
+alt
+ 
+    route.ts --> MyCourses.tsx: {videoUid, totalTime, currentTime}[]
+end
+
+@enduml

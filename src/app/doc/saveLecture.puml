@@ -1,0 +1,27 @@
+@startuml
+skinparam BoxPadding 10
+
+actor client
+
+box app
+participant Lecture.tsx
+end box
+
+box api
+
+participant route.ts
+end box
+
+database mongo
+
+== POST ==
+client -> Lecture.tsx: submit
+Lecture.tsx -> route.ts: 유저 강의 저장(videoUid, email, totalTime, currentTime, date)
+
+route.ts --> mongo: db 저장
+
+alt
+    route.ts --> Lecture.tsx: send result 100
+end
+
+@enduml

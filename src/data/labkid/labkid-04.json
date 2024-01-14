@@ -1,0 +1,42 @@
+{
+  "banner": {
+    "banner_image": "/images/experience/labkid_banner.png",
+    "season": ["랩키드 시즌 4", "LABKID Season4"],
+    "title": "4차산업_블레이드워",
+    "intro": "다양한 진로들을 체험해보고 나에게 맞는 진로를 찾아보세요.\n 적성에 맞는 흥미로운 진로들을 만나 보실 수 있습니다. "
+  },
+  "contents": [
+    {
+      "title": "스마트 시티 EP1 - AI 기반 자원관리 전문가",
+      "job_intro": {
+        "future_job": "새로운 미래의 직업: AI 드론 개발자, 현장 지원 엔지니어",
+        "current_job": "현재의 해당 직업: 드론 조종사, 개발자, 엔지니어"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "드론에는 어떤 부품이 들어갈까요?\n드론은 어떻게 조립하는 걸까요?\n미래의 드론은 어떤 역할을 하게 될까요?",
+      "tag": "#드론 #드론 조립1 #인공지능",
+      "synopsis": {
+        "title": "M1 EP1 AI 기반 자원관리 전문가.",
+        "description": "레드휴먼즈의 대대적인 해킹 공격으로 완전히 마비된 스마트 시티의 전산망을 복구하기 위해 세 명의 젠코 코퍼레이션 요원이 투입되었다.\n당신은 AI기반 자원관리 전문가로서 다운된 드론을 수리하고 수리한 드론을 이용해 두 명의 현장 요원을 뒤에서 지원해야 한다."
+      },
+      "video_uid": "488004281",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220223_154/1645584723847MYFgs_JPEG/ceuWwm0O5m6QCJJ563FY.jpg"
+    },
+    {
+      "title": "스마트 팩토리 EP3 - 설비제어 시스템 전문가",
+      "job_intro": {
+        "future_job": "새로운 미래의 직업: 설비제어시스템 전문가",
+        "current_job": "현재의 해당 직업: 설비 관리자, 센서 전문가"
+      },
+      "contents_format": "• 기반 디바이스: Oculus (PC Link)\n• 콘텐츠 모드 Single",
+      "motivation": "공장을 구성하고 제어하는 여러 단계의 시스템에 대해 알아봅시다.\n인공지능 휴머노이드 로봇을 이용해 무너진 건물의 잔해를 치워보면서, 미래의 로봇의 쓰임새에 대해 알아봅시다.\n직접 무너진 공장을 수리하고 시스템을 복구하면서 어떤 요소들이 공장을 구성하는지 알아봅시다.",
+      "tag": "#휴머노이드 #공장_제어 #시스템_수리",
+      "synopsis": {
+        "title": "M2 EP3 설비제어 시스템 전문가",
+        "description": "블루휴먼즈의 공격으로 무너져버린 공장을 휴머노이드 로봇 테드와 함께 복구해야 한다. \n공장이 무너지면서 콘크리트에 맞아 관절이 부러진 테드를 수리하고,\n테드에게 명령을 내려 건물 잔해를 치우며 부서진 로봇팔을 다시 조립하고 시스템을 복구해야 한다."
+      },
+      "video_uid": "487529102",
+      "thumbnail": "https://cphinf.pstatic.net/mooc/20220223_197/1645590445786FJfBz_JPEG/hX1PYufpBuTP3ALAPQ0S.jpg"
+    }
+  ]
+}
