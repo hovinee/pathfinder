@@ -161,15 +161,20 @@ const Chat = ({
 
   useEffect(() => {
     if ((tutorialStep || tutorialTrainingStep) < 100) {
-      sendtoUnity(
-        'MessageReceiver',
-        'OnProcess',
-        `gptmsg:${
-          path === 'trainer'
-            ? tutorialTraining[tutorialTrainingStep].text
-            : tutorial[tutorialStep].text
-        }`,
-      )
+      console.log(tutorialStep)
+      if (path === 'client') {
+        sendtoUnity(
+          'MessageReceiver',
+          'OnProcess',
+          `gptmsg:${tutorial[tutorialStep].text}`,
+        )
+      } else {
+        sendtoUnity(
+          'MessageReceiver',
+          'OnProcess',
+          `gptmsg:${tutorialTraining[tutorialTrainingStep].text}`,
+        )
+      }
     }
   }, [tutorialStep, tutorialTrainingStep])
 
