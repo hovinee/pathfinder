@@ -23,15 +23,15 @@ const Courses = () => {
   ]
   return (
     <>
-      <BannerSection image_url={'/images/course/course_banner.png'}>
+      <BannerSection image_url={'/images/course/course_banner.jpg'}>
         <div className="lg-[6.2rem] absolute inset-0 flex flex-col justify-center pl-[5.2rem] xl:pl-[6.2rem]">
-          <CSText size="35" color="white" weight="bold">
+          <CSText size="35" weight="bold" className="text-181818">
             LEARN 배움
           </CSText>
           <CSText
             size="18"
-            color="white"
-            className="mt-[1.7rem] w-[29rem] lg:w-[38rem] xl:w-full xl:whitespace-pre-line"
+            className="mt-[1.7rem] w-[29rem] text-181818 lg:w-[38rem] xl:w-full xl:whitespace-pre-line"
+            weight="bold"
           >
             {
               '원하는 진로에 맞는 최적의 교육을 만나보세요. \n 다양하고 재밌는 진로 교육 프로그램들이 준비 되어 있습니다.'

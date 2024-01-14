@@ -40,17 +40,17 @@ const counsel = [
   {
     title: '진로상담 심리',
     description: '자아인식의 여정: 나를 알고 미래를 향해 해 보세요',
-    src: '/images/career-counseling/banner_image.png',
+    src: '/images/career-counseling/banner_image.jpg',
   },
   {
     title: '진로상담 심리',
     description: '흥미로운 실험: 능력과 가치관을 탐험해 보세요',
-    src: '/images/career-counseling/banner_image_2.png',
+    src: '/images/career-counseling/banner_image_2.jpg',
   },
   {
     title: '진로상담 심리',
     description: '심리적 해마로, 미래로: 성공적인 진로를 향해 해 보세요',
-    src: '/images/career-counseling/banner_image_3.png',
+    src: '/images/career-counseling/banner_image_3.jpg',
   },
 ]
 
