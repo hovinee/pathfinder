@@ -78,8 +78,8 @@ const UserHistory = ({
             {history.text}
           </CSText>
         ))}
-        {(path === 'client' && tutorialStep === 11) ||
-          (path === 'trainer' && tutorialTrainingStep === 1 && (
+        {tutorialStep === 11 ||
+          (tutorialTrainingStep === 1 && (
             <>
               <motion.div
                 className={clsx(
@@ -87,11 +87,11 @@ const UserHistory = ({
                 )}
                 animate={controls}
                 onClick={() => {
-                  // if (path === 'client') {
-                  //   setTutorialStep((num) => num + 1)
-                  // } else if (path === 'trainer') {
-                  //   setTutorialTrainingStep((num) => num + 1)
-                  // }
+                  if (path === 'client') {
+                    setTutorialStep((num) => num + 1)
+                  } else if (path === 'trainer') {
+                    setTutorialTrainingStep((num) => num + 1)
+                  }
                 }}
               >
                 <img

@@ -13,7 +13,7 @@ import { ReactUnityEventParameter } from 'react-unity-webgl/distribution/types/r
 import { TTutorial } from '@/utils/types'
 
 interface TProps {
-  sendToGPT: (message?: string) => void
+  sendToGPT: (message?: string, who?: string) => void
   aiMsg: string
   userMsg: string
   setUserMsg: Dispatch<SetStateAction<string>>
@@ -34,7 +34,9 @@ interface TProps {
   path: string
   switchingActor: string
   setSwitchingActor: Dispatch<SetStateAction<string>>
+  setGetAdvise: Dispatch<SetStateAction<boolean>>
   stackMsg: string[]
+  setStackMsg: Dispatch<SetStateAction<string[]>>
 }
 
 const Chat = ({
@@ -56,6 +58,8 @@ const Chat = ({
   switchingActor,
   setSwitchingActor,
   stackMsg,
+  setStackMsg,
+  setGetAdvise,
 }: TProps) => {
   const [openJob, setOpenJob] = useState<boolean>(false)
   const messagesEndRef = useRef<HTMLDivElement | null>(null)
@@ -74,13 +78,17 @@ const Chat = ({
       setSwitchingActor('trainer-poor')
       const text =
         '안녕하세요. 오늘 진로상담 받으러온 학생이에요. 집안이 어려운데 미술을 계속 해도 될지 고민이에요.'
-      sendtoUnity('MessageReceiver', 'OnProcess', `gptmsg:${text}`)
+      sendtoUnity('MessageReceiver', 'OnProcess', `gptmsg-trainer-poor:${text}`)
     }
 
     if (msg === '조언 구하기') {
-      sendToGPT(stackMsg[0])
+      console.log(stackMsg.join(''))
+      setSwitchingActor('trainer')
+      sendToGPT(stackMsg.join(''), 'trainer')
       setAnalysis(true)
       setAiMsg('')
+      setStackMsg([])
+      setGetAdvise(true)
     }
   }
 
@@ -139,11 +147,6 @@ const Chat = ({
     setAnalysis(true)
   }
 
-  //조언구하기
-  const getAdvise = () => {
-    sendToGPT(chat[chat.length - 1].text)
-  }
-
   const controls = useAnimation()
 
   useEffect(() => {
@@ -172,7 +175,7 @@ const Chat = ({
         sendtoUnity(
           'MessageReceiver',
           'OnProcess',
-          `gptmsg:${tutorialTraining[tutorialTrainingStep].text}`,
+          `gptmsg-${switchingActor}:${tutorialTraining[tutorialTrainingStep].text}`,
         )
       }
     }
@@ -188,7 +191,7 @@ const Chat = ({
       },
     }),
   }
-
+  console.log(chat)
   return (
     <div className="absolute bottom-[4rem] right-[3.1rem] flex gap-[2rem]">
       <div className="flex h-[calc(100vh-13rem)] gap-[1.2rem]">
@@ -227,10 +230,10 @@ const Chat = ({
                         </CSText>
                         <div
                           className={clsx(
-                            'mt-[0.5rem] max-w-[33.5rem] rounded-r-2xl rounded-bl-2xl bg-white p-[1rem]',
-                            path === 'trainer' &&
-                              who === 'trainer' &&
-                              'bg-[#BEF3FF]',
+                            'mt-[0.5rem] max-w-[33.5rem] rounded-r-2xl rounded-bl-2xl p-[1rem]',
+                            path === 'trainer' && who === 'trainer'
+                              ? 'bg-[#BEF3FF]'
+                              : ' bg-white',
                           )}
                         >
                           <AnimatePresence>
@@ -352,7 +355,7 @@ const Chat = ({
               type="text"
               bgColor="181818"
               placeholder={
-                tutorialStep === 100
+                tutorialStep === 100 || tutorialTrainingStep === 100
                   ? '대화는 채팅으로 하시면 됩니다.'
                   : '튜토리얼을 진행해주세요!'
               }
@@ -366,7 +369,7 @@ const Chat = ({
                   sendMessage()
                 }
               }}
-              disabled={tutorialStep !== 100}
+              // disabled={tutorialStep !== 100 || tutorialTrainingStep !== 100}
             />
             <div
               className={clsx(

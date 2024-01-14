@@ -45,7 +45,7 @@ const UnityHeader = ({
         if (path === 'client' && tutorialStep === 12) {
           setTutorialStep(100)
         } else if (path === 'trainer' && tutorialTrainingStep === 3) {
-          setTutorialTrainingStep(100)
+          setTutorialTrainingStep((num) => num + 1)
         } else {
           goToLobby()
         }

@@ -66,26 +66,30 @@ const CounselPage = () => {
   //스위칭 조언 상담
   const [switchingActor, setSwitchingActor] = useState<string>('trainer')
 
+  //조언구하기
+  const [getAdvise, setGetAdvise] = useState<boolean>(false)
+
   //보낸 메시지 쌓기
   const [stackMsg, setStackMsg] = useState<string[]>([])
   const systemMsg =
-    sceneOpeningEnd === 'trainer' ? switchingActor : counseling[wantCounseling]
-
-  const sendToGPT = async (selectMessage?: string) => {
+    path === 'trainer' ? switchingActor : counseling[wantCounseling]
+  console.log(systemMsg,'sys')
+  const sendToGPT = async (selectMessage?: string, who?: string) => {
     const message = await connectToGPT(
-      systemMsg,
+      who ? who : systemMsg,
       selectMessage ? selectMessage : userMsg,
     )
+    console.log(selectMessage, who, switchingActor)
     if (path === 'client') {
       sendMessage('MessageReceiver', 'OnProcess', `gptmsg:${message}`)
     } else if (path === 'trainer') {
       sendMessage(
         'MessageReceiver',
         'OnProcess',
-        `gptmsg-${switchingActor}:${message}`,
+        `gptmsg-${who ? who : switchingActor}:${message}`,
       )
     }
-    sendMessage('MessageReceiver', 'OnClickedButton', 'gpt_discard')
+    // sendMessage('MessageReceiver', 'OnClickedButton', 'gpt_discard')
   }
 
   const OnSplashEnd = useCallback((data: any) => {
@@ -106,26 +110,24 @@ const CounselPage = () => {
 
   const OnMsg = useCallback((data: any) => {
     setAiMsg(data)
-    if(tutorialTrainingStep === 100){
-      setStackMsg((msg) => [...msg, data])
-    }
-
   }, [])
 
   const OnMsgEnd = useCallback(() => {
-    console.log(switchingActor, tutorialTrainingStep)
     if (path === 'client' && tutorialStep < 100) {
       setChat((prevArray) => {
         const lastItem = prevArray[prevArray.length - 1]
         lastItem.select = tutorial[tutorialStep]?.select
         return [...prevArray]
       })
-    } else if (path === 'trainer' && tutorialTrainingStep <= 100) {
+    } else if (path === 'trainer' && tutorialTrainingStep < 100) {
       setChat((prevArray) => {
         const lastItem = prevArray[prevArray.length - 1]
         lastItem.select = tutorialTraining[tutorialTrainingStep]?.select
         return [...prevArray]
       })
+      if (tutorialTrainingStep === 4) {
+        setTutorialTrainingStep(100)
+      }
     } else if (
       path === 'trainer' &&
       tutorialTrainingStep === 100 &&
@@ -136,6 +138,9 @@ const CounselPage = () => {
         lastItem.select = ['조언 구하기']
         return [...prevArray]
       })
+    } else if (getAdvise) {
+      setSwitchingActor('trainer-poor')
+      setGetAdvise(false)
     }
     setAiMsg('')
   }, [tutorialStep, tutorialTrainingStep, switchingActor])
@@ -145,6 +150,13 @@ const CounselPage = () => {
       sendMessage('MessageReceiver', 'OnClickedToLoadScene', path)
     }
   }, [splashEnd])
+
+  //조언 스택쌓기
+  useEffect(() => {
+    if (aiMsg && switchingActor === 'trainer-poor') {
+      setStackMsg((msg) => [...msg, aiMsg])
+    }
+  }, [aiMsg, switchingActor])
 
   const goToLobby = () => {
     sendMessage('MessageReceiver', 'OnClickedToLoadScene', 'Lobby')
@@ -322,6 +334,8 @@ const CounselPage = () => {
               switchingActor={switchingActor}
               setSwitchingActor={setSwitchingActor}
               stackMsg={stackMsg}
+              setStackMsg={setStackMsg}
+              setGetAdvise={setGetAdvise}
             />
             {analysis && <AnalysisModal />}
           </>
