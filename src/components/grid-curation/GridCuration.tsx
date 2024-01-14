@@ -17,7 +17,7 @@ const GridCuration = ({ tumbnailContent, category }: TProps) => {
   const { data: user } = useSession()
 
   return (
-    <div className="grid grid-cols-4 gap-[1.5rem]">
+    <div className="grid grid-cols-4 gap-[1.5rem] border-b pb-[5rem]">
       {tumbnailContent.map(({ thumbnail_image, title, sub_title }, index) => (
         <div key={index}>
           <div className="cursor-pointer">
