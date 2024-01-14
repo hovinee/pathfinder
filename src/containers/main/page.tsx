@@ -40,7 +40,7 @@ const MainArea = () => {
 
   return (
     <div className="relative mx-auto mt-[-10rem] rounded-lg px-[9rem] pb-[10rem]">
-      <CSText size="21" color="white" weight="bold">
+      <CSText size="35" color="white" weight="bold">
         둘러보기
       </CSText>
       {curationCategory.map((title, index) => (
