@@ -198,7 +198,7 @@ const Menu = ({
                     color="black"
                     className="mt-[1rem] text-center"
                   >
-                    클릭시 홀랜드 검사 페이지로 이동합니다.
+                    이곳은 gpts에 오픈한 duco ai입니다!
                   </CSText>
                 </div>
               </>

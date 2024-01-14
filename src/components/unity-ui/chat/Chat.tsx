@@ -389,45 +389,48 @@ const Chat = ({
                   alt="send"
                 />
               </div>
-              <div className="grid h-[2.8rem] w-[2.8rem] place-items-center rounded-full bg-red-400">
-                <Image
-                  src={`/images/unity/question.png`}
-                  className="h-[1.6rem] w-[1.6rem] cursor-pointer"
-                  width={0}
-                  height={0}
-                  onClick={() => setOpenJob(!openJob)}
-                  alt="question"
-                />
-                {tutorialStep === 9 && (
-                  <>
-                    <motion.div
-                      className={clsx(
-                        'absolute right-[-3.5rem] top-[-1rem] w-[7rem] cursor-pointer',
-                      )}
-                      animate={controls}
-                      onClick={() =>
-                        tutorialStep === 9 && setTutorialStep((num) => num + 1)
-                      }
-                    >
-                      <img
-                        src="/images/unity/finger_up.png"
-                        alt="Finger"
-                        className="h-full w-full"
-                      />
-                    </motion.div>
-                    <div className="absolute left-[-5rem] top-[-13rem] w-[15rem] rounded-xl border border-[#E1792D] bg-white px-[1rem] py-[1rem]">
-                      <CSText
-                        size="16"
-                        weight="bold"
-                        color="black"
-                        className="mt-[1rem] text-center"
+              {path === 'client' && (
+                <div className="grid h-[2.8rem] w-[2.8rem] place-items-center rounded-full bg-red-400">
+                  <Image
+                    src={`/images/unity/question.png`}
+                    className="h-[1.6rem] w-[1.6rem] cursor-pointer"
+                    width={0}
+                    height={0}
+                    onClick={() => setOpenJob(!openJob)}
+                    alt="question"
+                  />
+                  {tutorialStep === 9 && (
+                    <>
+                      <motion.div
+                        className={clsx(
+                          'absolute right-[-3.5rem] top-[-1rem] w-[7rem] cursor-pointer',
+                        )}
+                        animate={controls}
+                        onClick={() =>
+                          tutorialStep === 9 &&
+                          setTutorialStep((num) => num + 1)
+                        }
                       >
-                        진로상담 직업 예시 질문을 파악할 수 있습니다.
-                      </CSText>
-                    </div>
-                  </>
-                )}
-              </div>
+                        <img
+                          src="/images/unity/finger_up.png"
+                          alt="Finger"
+                          className="h-full w-full"
+                        />
+                      </motion.div>
+                      <div className="absolute left-[-5rem] top-[-13rem] w-[15rem] rounded-xl border border-[#E1792D] bg-white px-[1rem] py-[1rem]">
+                        <CSText
+                          size="16"
+                          weight="bold"
+                          color="black"
+                          className="mt-[1rem] text-center"
+                        >
+                          진로상담 직업 예시 질문을 파악할 수 있습니다.
+                        </CSText>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           </CSLabel>
         </div>
