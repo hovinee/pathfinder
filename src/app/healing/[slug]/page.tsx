@@ -130,16 +130,17 @@ const HealingPage = () => {
           />
           <Progressbar number={Math.round(loadingProgression * 100)} />
         </div>
-
-        <div
-          className={clsx(
-            'absolute left-[3rem] top-[3rem] w-[4.6rem] cursor-pointer',
-            splashEnd ? 'block' : 'hidden',
-          )}
-          onClick={() => window.close()}
-        >
-          <AutoSizeImage src="/images/unity/exit.png" full />
-        </div>
+        {path !== 'intro_lobby' && path !== 'homepage' && (
+          <div
+            className={clsx(
+              'absolute left-[3rem] top-[3rem] w-[4.6rem] cursor-pointer',
+              splashEnd ? 'block' : 'hidden',
+            )}
+            onClick={() => window.close()}
+          >
+            <AutoSizeImage src="/images/unity/exit.png" full />
+          </div>
+        )}
 
         <Unity
           style={{
