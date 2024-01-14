@@ -33,15 +33,15 @@ const curation = [
       '새로운 인연들과 소통의 나래를 펴고 언제 어디서든 손쉽게 만날 수 있는 메타버스의 공간은 여러분에게 끝없는 경험과 새로운 만남의 세계를 선사합니다. 이곳은 여러분이 만난 사람들과의 소중한 기억을 기록하고 그 순간들을 아름다운 이야기로 나눌 수 있는 특별한 장소입니다.',
   },
 ]
-const curationCategory = ['전체', '상담 월드', '힐링 월드', '탐험', '커뮤니티']
+const curationCategory = ['전체', '상담 월드', '힐링 월드', '탐험 월드', '커뮤니티 월드']
 
 const MainArea = () => {
   const [category, setCategory] = useState<number>(0)
 
   return (
     <div className="relative mx-auto mt-[-10rem] rounded-lg px-[9rem] pb-[10rem]">
-      <CSText size="35" color="white" weight="bold">
-        둘러보기
+      <CSText size="31" color="white" weight="bold">
+        둘러보기-바로가기
       </CSText>
       {curationCategory.map((title, index) => (
         <div
