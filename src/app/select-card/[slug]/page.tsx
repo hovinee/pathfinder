@@ -7,6 +7,7 @@ import CSButton from '@/components/ui/button/CSButton'
 import CSSpan from '@/components/ui/span/CSSpan'
 import CSText from '@/components/ui/text/CSText'
 import {
+  thumbnailCommunity,
   thumbnailCounseling,
   thumbnailDiagnosis,
   thumbnailHealing,
@@ -27,7 +28,9 @@ const SelectCardPage = () => {
       ? thumbnailCounseling
       : world === 1
         ? thumbnailHealing
-        : thumbnailDiagnosis
+        : world === 2
+          ? thumbnailDiagnosis
+          : thumbnailCommunity
 
   return (
     <main className="px-[1.8rem]">
@@ -72,7 +75,10 @@ const SelectCardPage = () => {
               >
                 {tumbnailContent[worldIndex].description}
               </CSText>
-              <Audio audioPath={tumbnailContent[worldIndex].audio} />
+              {tumbnailContent[worldIndex].audio !== '' && (
+                <Audio audioPath={tumbnailContent[worldIndex].audio} />
+              )}
+
               <div className="mt-[1rem]">
                 {tumbnailContent[worldIndex].tag.map((value, index) => (
                   <div

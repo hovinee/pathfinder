@@ -116,4 +116,5 @@ export interface TTumbnailContent {
   description: string
   tag?: string[]
   audio?: string
+  path?: string
 }
