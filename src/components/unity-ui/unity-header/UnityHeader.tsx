@@ -60,26 +60,25 @@ const UnityHeader = ({
       >
         <AutoSizeImage src="/images/unity/exit.png" full />
 
-        {(path === 'client' && tutorialStep === 12) ||
-          (path === 'trainer' && tutorialTrainingStep === 3 && (
-            <>
-              <motion.div
-                className={clsx('absolute right-[-5rem] top-[3.5rem] w-[7rem]')}
-                animate={controls}
-              >
-                <img
-                  src="/images/unity/finger_up.png"
-                  alt="Finger"
-                  className="h-full w-full"
-                />
-              </motion.div>
-              <div className="absolute bottom-[-15rem] right-[-35rem] w-[28rem] rounded-xl border border-[#E1792D] bg-white px-[1rem] py-[2rem]">
-                <CSText size="18" weight="bold" color="black">
-                  나가기 버튼을 누르면 다시 로비로 이동합니다.
-                </CSText>
-              </div>
-            </>
-          ))}
+        {(tutorialStep === 12 || tutorialTrainingStep === 3) && (
+          <>
+            <motion.div
+              className={clsx('absolute right-[-5rem] top-[3.5rem] w-[7rem]')}
+              animate={controls}
+            >
+              <img
+                src="/images/unity/finger_up.png"
+                alt="Finger"
+                className="h-full w-full"
+              />
+            </motion.div>
+            <div className="absolute bottom-[-15rem] right-[-35rem] w-[28rem] rounded-xl border border-[#E1792D] bg-white px-[1rem] py-[2rem]">
+              <CSText size="18" weight="bold" color="black">
+                나가기 버튼을 누르면 창을 닫습니다.
+              </CSText>
+            </div>
+          </>
+        )}
       </div>
     </div>
   )

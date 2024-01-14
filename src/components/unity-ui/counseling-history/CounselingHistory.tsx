@@ -32,19 +32,25 @@ const CounselingHistory = ({
 
   return (
     <div className="absolute bottom-[4rem] left-[3rem]">
-      <div className="flex h-[28rem] w-[40rem] flex-col overflow-auto rounded-[1rem] border-none bg-181818 px-[2rem] pt-[2rem] text-white outline-none">
-        <CSText size="20" color="white" className="mt-[0.3rem]">
-          상담일지
-        </CSText>
-        <textarea className="mt-[1rem] h-full w-full flex-1 resize-none bg-transparent outline-none" />
-      </div>
+      {openHistory && (
+        <div className="flex h-[28rem] w-[40rem] flex-col overflow-auto rounded-[1rem] border-none bg-181818 px-[2rem] pt-[2rem] text-white outline-none">
+          <CSText size="20" color="white" className="mt-[0.3rem]">
+            상담일지
+          </CSText>
+          <textarea className="mt-[1rem] h-full w-full flex-1 resize-none bg-transparent outline-none" />
+        </div>
+      )}
 
       <div
         className={clsx(
           'relative mt-[1.5rem] w-[4.6rem] cursor-pointer',
           tutorialTrainingStep === 2 && 'z-10 cursor-pointer',
         )}
-        onClick={() => setTutorialTrainingStep((num) => num + 1)}
+        onClick={() =>
+          tutorialTrainingStep === 2
+            ? setTutorialTrainingStep((num) => num + 1)
+            : setOpenHistory(!openHistory)
+        }
       >
         <AutoSizeImage src="/images/unity/counseling_history.png" full />
         {tutorialTrainingStep === 2 && (

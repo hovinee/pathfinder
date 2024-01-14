@@ -18,7 +18,7 @@ import { TTutorial } from '@/utils/types'
 import UserHistory from '@/components/unity-ui/user-history/UserHistory'
 import { ReactUnityEventParameter } from 'react-unity-webgl/distribution/types/react-unity-event-parameters'
 import AnalysisModal from '@/components/unity-ui/modal/AnalysisModal'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import clsx from 'clsx'
 import DignosisModal from '@/components/unity-ui/modal/DignosisModal'
 import CounselingHistory from '@/components/unity-ui/counseling-history/CounselingHistory'
@@ -26,6 +26,7 @@ import { tutorial, tutorialTraining } from '@/data/unity/data'
 
 const CounselPage = () => {
   const path = usePathname().split('/').pop()
+  const router = useRouter()
   //unity build
   const {
     unityProvider,
@@ -73,13 +74,13 @@ const CounselPage = () => {
   const [stackMsg, setStackMsg] = useState<string[]>([])
   const systemMsg =
     path === 'trainer' ? switchingActor : counseling[wantCounseling]
-  console.log(systemMsg,'sys')
+
   const sendToGPT = async (selectMessage?: string, who?: string) => {
     const message = await connectToGPT(
       who ? who : systemMsg,
       selectMessage ? selectMessage : userMsg,
     )
-    console.log(selectMessage, who, switchingActor)
+
     if (path === 'client') {
       sendMessage('MessageReceiver', 'OnProcess', `gptmsg:${message}`)
     } else if (path === 'trainer') {
@@ -159,12 +160,14 @@ const CounselPage = () => {
   }, [aiMsg, switchingActor])
 
   const goToLobby = () => {
-    sendMessage('MessageReceiver', 'OnClickedToLoadScene', 'Lobby')
-    setSelectPlace('')
-    setSceneOpeningEnd('')
-    setAiMsg('')
-    setTutorialStep(0)
-    setChat([])
+    // router.back()
+    // setSelectPlace('')
+    // setSceneOpeningEnd('')
+    // setAiMsg('')
+    // setTutorialStep(0)
+    // setTutorialTrainingStep(0)
+    // setChat([])
+    window.close()
   }
 
   //방분위기선택

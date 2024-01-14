@@ -5,6 +5,7 @@ import CSText from '@/components/ui/text/CSText'
 import { TTutorial } from '@/utils/types'
 import clsx from 'clsx'
 import { motion, useAnimation } from 'framer-motion'
+import { useSession } from 'next-auth/react'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 
 interface TProps {
@@ -25,7 +26,8 @@ const UserHistory = ({
   path,
 }: TProps) => {
   const userChat = chat.filter((item) => item.who === 'user')
-
+  const aiChat = chat.filter((item) => item.who === 'trainer')
+  const { data: user } = useSession()
   const controls = useAnimation()
 
   useEffect(() => {
@@ -49,7 +51,7 @@ const UserHistory = ({
         path === 'trainer' && tutorialTrainingStep === 1 && 'z-10',
       )}
     >
-      <div className="h-[42.1rem] w-[40rem] overflow-auto rounded-[1rem] bg-181818 px-[2rem] pt-[2rem] ">
+      <div className="custom-scrollbar h-[42.1rem] w-[40rem] overflow-auto rounded-[1rem] bg-181818 px-[2rem] pt-[2rem] ">
         <div className="flex gap-[1.3rem] border-b border-b-[#2E3033] pb-[2rem]">
           <AutoSizeImage
             src={'/images/unity/nara_profile.png'}
@@ -58,16 +60,39 @@ const UserHistory = ({
           />
           <div className="flex flex-col ">
             <CSText size="16" color="white">
-              AI 상담사 나라
+              {path === 'client'
+                ? 'AI 상담사 나라'
+                : `교육생 ${user?.user?.name}`}
             </CSText>
             <CSText size="20" color="white" className="mt-[0.3rem]">
-              일일 친구 상담소
+              {path === 'client' ? '일일 친구 상담소' : '일일 상담 훈련소'}
             </CSText>
           </div>
         </div>
         <CSText size="20" color="white" className="mt-[0.3rem]">
           오늘의 상담일지
         </CSText>
+        {path === 'trainer' && (
+          <>
+            <CSText size="20" color="white" className="mt-[1rem]">
+              AI 조언
+            </CSText>
+            {aiChat.map((history, index) => (
+              <CSText
+                size="16"
+                color="white"
+                className="mt-[0.3rem] border-b border-b-[#2E3033] py-[0.5rem]"
+                key={index}
+              >
+                {history.text}
+              </CSText>
+            ))}
+            <CSText size="20" color="white" className="mt-[1rem]">
+              내 조언
+            </CSText>
+          </>
+        )}
+
         {userChat.map((history, index) => (
           <CSText
             size="16"
@@ -78,40 +103,39 @@ const UserHistory = ({
             {history.text}
           </CSText>
         ))}
-        {tutorialStep === 11 ||
-          (tutorialTrainingStep === 1 && (
-            <>
-              <motion.div
-                className={clsx(
-                  'absolute bottom-[-6.5rem] right-[-5rem] w-[7rem] cursor-pointer',
-                )}
-                animate={controls}
-                onClick={() => {
-                  if (path === 'client') {
-                    setTutorialStep((num) => num + 1)
-                  } else if (path === 'trainer') {
-                    setTutorialTrainingStep((num) => num + 1)
-                  }
-                }}
+        {(tutorialStep === 11 || tutorialTrainingStep === 1) && (
+          <>
+            <motion.div
+              className={clsx(
+                'absolute bottom-[-6.5rem] right-[-5rem] w-[7rem] cursor-pointer',
+              )}
+              animate={controls}
+              onClick={() => {
+                if (path === 'client') {
+                  setTutorialStep((num) => num + 1)
+                } else if (path === 'trainer') {
+                  setTutorialTrainingStep((num) => num + 1)
+                }
+              }}
+            >
+              <img
+                src="/images/unity/finger_up.png"
+                alt="Finger"
+                className="h-full w-full"
+              />
+            </motion.div>
+            <div className="absolute bottom-[-15rem] right-[-35rem] w-[28rem] rounded-xl border border-[#E1792D] bg-white px-[1rem] py-[2rem]">
+              <CSText
+                size="18"
+                weight="bold"
+                color="black"
+                className="mt-[1rem]"
               >
-                <img
-                  src="/images/unity/finger_up.png"
-                  alt="Finger"
-                  className="h-full w-full"
-                />
-              </motion.div>
-              <div className="absolute bottom-[-15rem] right-[-35rem] w-[28rem] rounded-xl border border-[#E1792D] bg-white px-[1rem] py-[2rem]">
-                <CSText
-                  size="18"
-                  weight="bold"
-                  color="black"
-                  className="mt-[1rem]"
-                >
-                  상담 일지를 통해 나의 상담 내용을 파악할 수 있습니다.
-                </CSText>
-              </div>
-            </>
-          ))}
+                상담 일지를 통해 나의 상담 내용을 파악할 수 있습니다.
+              </CSText>
+            </div>
+          </>
+        )}
       </div>
     </div>
   )

@@ -191,7 +191,7 @@ const Chat = ({
       },
     }),
   }
-  console.log(chat)
+ 
   return (
     <div className="absolute bottom-[4rem] right-[3.1rem] flex gap-[2rem]">
       <div className="flex h-[calc(100vh-13rem)] gap-[1.2rem]">
