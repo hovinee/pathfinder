@@ -76,7 +76,7 @@ const SelectCardPage = () => {
                 {tumbnailContent[worldIndex].description}
               </CSText>
               {tumbnailContent[worldIndex].audio !== '' && (
-                <Audio audioPath={tumbnailContent[worldIndex].audio} />
+                <Audio audioPath={tumbnailContent[worldIndex].audio!} />
               )}
 
               <div className="mt-[1rem]">

@@ -114,7 +114,8 @@ const HealingPage = () => {
 
   useEffect(() => {
     if (sceneClosingEnd === 'main') {
-      router.push('/counsel/intro_lobby')
+      window.open('/counsel/intro_lobby')
+      router.push('/')
     }
   }, [sceneClosingEnd])
 
