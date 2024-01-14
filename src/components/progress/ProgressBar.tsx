@@ -13,7 +13,7 @@ const Progressbar = ({ number }: Props) => {
       <div className="relative z-10 w-[40rem] rounded-full border border-yellow-700">
         <div
           className={clsx(
-            'absolute inset-0 grid place-items-center text-16 font-bold text-black',
+            'absolute inset-0 grid place-items-center text-16 font-bold text-black z-10',
           )}
         >
           {number}%

@@ -37,14 +37,21 @@ const HealingPage = () => {
   const [splashEnd, setSplashEnd] = useState<boolean>(false)
 
   //scene 종료
-  const [sceneOpeningEnd, setSceneOpeningEnd] = useState('')
+  const [sceneClosingEnd, setSceneClosingEnd] = useState('')
 
   //
   const [getApi, setGetApi] = useState<string>('')
   const [getParam, setParam] = useState<string>('')
 
-  const OnSceneOpeningEnd = useCallback((data: any) => {
-    setSceneOpeningEnd(data)
+  const OnSceneClosingEnd = useCallback((data: any) => {
+    setSceneClosingEnd(data)
+  }, [])
+  const OnPointerClick = useCallback((data: any) => {
+    if (data === 'main_vr') {
+      router.push('/experience')
+    } else if (data === 'main_lms') {
+      router.push('/digital-literacy')
+    }
   }, [])
 
   const OnSplashEnd = useCallback((data: any) => {
@@ -86,12 +93,14 @@ const HealingPage = () => {
   }, [getApi, getParam])
 
   useEffect(() => {
-    addEventListener('OnSceneOpeningEnd', OnSceneOpeningEnd)
+    addEventListener('OnSceneClosingEnd', OnSceneClosingEnd)
+    addEventListener('OnPointerClick', OnPointerClick)
     addEventListener('OnSplashEnd', OnSplashEnd)
     addEventListener('OnRequest', OnRequest)
 
     return () => {
-      removeEventListener('OnSceneOpeningEnd', OnSceneOpeningEnd)
+      removeEventListener('OnSceneClosingEnd', OnSceneClosingEnd)
+      removeEventListener('OnPointerClick', OnPointerClick)
       removeEventListener('OnSplashEnd', OnSplashEnd)
       removeEventListener('OnRequest', OnRequest)
     }
@@ -104,14 +113,10 @@ const HealingPage = () => {
   }, [splashEnd])
 
   useEffect(() => {
-    if (sceneOpeningEnd === 'main') {
+    if (sceneClosingEnd === 'main') {
       router.push('/counsel/intro_lobby')
-    } else if (sceneOpeningEnd === 'main_vr') {
-      router.push('/experience')
-    } else if (sceneOpeningEnd === 'main_lms') {
-      router.push('digital-literacy')
     }
-  }, [sceneOpeningEnd])
+  }, [sceneClosingEnd])
 
   return (
     <>
