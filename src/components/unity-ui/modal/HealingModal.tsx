@@ -74,7 +74,7 @@ const HealingModal = ({ setSelectPlace }: TProps) => {
                           <CSText
                             size="14"
                             color="black"
-                            className="mt-[0.5rem]"
+                            className="mt-[0.5rem] line-clamp-1"
                           >
                             {sub_title}
                           </CSText>
