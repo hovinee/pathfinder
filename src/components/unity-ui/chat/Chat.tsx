@@ -81,7 +81,7 @@ const Chat = ({
       sendtoUnity('MessageReceiver', 'OnProcess', `gptmsg-trainer-poor:${text}`)
     }
 
-    if (msg === '조언 구하기') {
+    if (msg === 'AI조언 구하기') {
       console.log(stackMsg.join(''))
       setSwitchingActor('trainer')
       sendToGPT(stackMsg.join(''), 'trainer')
@@ -191,7 +191,7 @@ const Chat = ({
       },
     }),
   }
- 
+
   return (
     <div className="absolute bottom-[4rem] right-[3.1rem] flex gap-[2rem]">
       <div className="flex h-[calc(100vh-13rem)] gap-[1.2rem]">

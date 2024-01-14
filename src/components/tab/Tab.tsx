@@ -11,7 +11,20 @@ interface TProps {
 }
 
 const tabs = [{ label: '강좌소개' }, { label: '수강리뷰' }]
-
+const review = [
+  {
+    name: '최강영찬',
+    data: '2023.01.06',
+    review:
+      '무료버전을 해보니 다른 콘텐츠도 보고싶은데  무료체험 7일이라던지 있으면 더 해보고싶네요 재밌습니다.',
+  },
+  {
+    name: '나리777',
+    data: '2023.12.05',
+    review:
+      '아기자기하고 이쁜 것 같아요! 몰입이 잘되서 좀 신기했고 베이식 요금제로 다른것도 해보고있습니다!',
+  },
+]
 const Tab = ({ course }: TProps) => {
   const [selectedTab, setSelectedTab] = useState(tabs[0])
 
@@ -117,7 +130,7 @@ const Tab = ({ course }: TProps) => {
                   </div>
                 </div>
 
-                {[0, 0].map((_value, index) => (
+                {review.map((value, index) => (
                   <div
                     className="flex gap-[1.8rem] border-b pb-[1.2rem] pt-[4.7rem]"
                     key={index}
@@ -144,17 +157,15 @@ const Tab = ({ course }: TProps) => {
                             color="787878"
                             className="mt-[0.3rem]"
                           >
-                            토끼토끼 귀엽다
+                            {value.name}
                           </CSText>
                           <CSText size="14" color="787878">
-                            2023.12.05
+                            {value.data}
                           </CSText>
                         </div>
                       </div>
                       <CSText size="16" color="787878" className="mt-[2.8rem]">
-                        수강이 길게 늘어지는것같긴하지만 자세히 설명하고 어떤
-                        원리로 되는지 까지 깊게 가르치는 편이라 한국기준으로는
-                        학원다니는 것보다는 훨씬낫습니다.
+                        {value.review}
                       </CSText>
                       <div className="mt-[3.6rem] flex justify-end gap-[1.3rem]">
                         <AutoSizeImage

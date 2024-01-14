@@ -133,7 +133,6 @@ const Menu = ({
             onClick={() => {
               if (tutorialStep === 7) {
                 setTutorialStep((num) => num + 1)
-                sendtoUnity('MessageReceiver', 'OnClickedButton', 'gpt_discard')
               } else {
                 letsDance()
               }

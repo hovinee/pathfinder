@@ -76,6 +76,7 @@ const CounselPage = () => {
     path === 'trainer' ? switchingActor : counseling[wantCounseling]
 
   const sendToGPT = async (selectMessage?: string, who?: string) => {
+    console.log(systemMsg,'systemMsg')
     const message = await connectToGPT(
       who ? who : systemMsg,
       selectMessage ? selectMessage : userMsg,
@@ -136,7 +137,7 @@ const CounselPage = () => {
     ) {
       setChat((prevArray) => {
         const lastItem = prevArray[prevArray.length - 1]
-        lastItem.select = ['조언 구하기']
+        lastItem.select = ['AI조언 구하기']
         return [...prevArray]
       })
     } else if (getAdvise) {

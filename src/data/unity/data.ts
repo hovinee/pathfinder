@@ -25,8 +25,7 @@ export const thumbnailCounseling = [
       '/images/unity/counseling/training_image_5.png',
     ],
     title: 'AI 상담훈련',
-    sub_title:
-      '예비 진로상담 전문가를 위한 교육을 제공하는 상담훈련소',
+    sub_title: '예비 진로상담 전문가를 위한 교육을 제공하는 상담훈련소',
     description:
       '상담사로서의 발전을 위해 훈련과 조언이 필요하다면 AI를 대상으로 상담을 진행하며 경험을 쌓아보세요. 예비 상담사로서 당면할 수 있는 다양한 상황과 도전을 다룰 것입니다.\n\n이곳에서는 상담사로서의 기술과 이해력을 향상시키며 상담에서 얻을 수 있는 소중한 교훈을 다양한 시나리오를 통해 경험할 수 있을 것입니다. 예비 상담사로서의 역량을 키우고 실전에서의 경험을 쌓아 나가보세요.\n\n상담 시 경험하게 될 상황과 감정을 통해 상담의 중요성과 효과를 더 깊게 이해하게 될 것입니다. 예비 상담사로서의 성장과 지식 쌓는 여정을 함께 나누어보세요.',
     tag: ['AI', '상담훈련', '24시간', '언제어디서든'],
@@ -57,8 +56,7 @@ export const thumbnailCounseling = [
       '/images/unity/counseling/group_image_5.png',
     ],
     title: '집단상담',
-    sub_title:
-      '자신의 진로와 적성을 탐색하는 데 필요한 전문 상담소',
+    sub_title: '자신의 진로와 적성을 탐색하는 데 필요한 전문 상담소',
     description:
       '나와 비슷한 고민을 가진 사람들과 함께 대화를 나누어보세요. 서로의 이야기를 듣고 공감하는 시간을나와 비슷한 고민을 가진 사람들과 함께 대화를 나누어보세요. 서로의 이야기를 듣고 공감하는 시간을 통해 서로를 더 깊게 이해하고, 공감하는 순간 속에서 한 층 더 성장한 자신을 발견할 수 있을 거예요.\n\n이 곳에서는 당신과 같은 고민을 안고 있는 이들이 서로를 이해하고 격려하는 모습이 그려지며 공감과 이해를 바탕으로 함께 성장하는 공동체의 일원이 될 것입니다.\n\n비슷한 고민을 가진 이들과의 소통을 통해 더욱 풍부하게 함께 피어날 것입니다. 이 특별한 대화의 시간에서는 함께하는 이들과 소중한 경험을 나누며 서로에게 힘이 되고 위로가 되는 순간을 만끽할 수 있을 것입니다. 함께 이야기를 나누며 성장하는 여정을 경험해보세요',
     tag: ['비슷한관심사', '집단상담', '이해와공감', '상호작용'],
@@ -323,7 +321,7 @@ export const thumbnailDiagnosis = [
     audio: '/audio/enneagram.mp3',
   },
   {
-    thumbnail_image: [ 
+    thumbnail_image: [
       '/images/unity/dignosis/mbti_image.png',
       '/images/unity/dignosis/mbti_image_2.png',
       '/images/unity/dignosis/mbti_image_3.png',
@@ -371,6 +369,36 @@ export const thumbnailCommunity = [
     tag: ['비슷한관심사', '집단상담', '이해와공감', '상호작용'],
     path: 'https://www.spatial.io/s/My-Sandbox-65a24b01c7c93d76b460b2ab',
     audio: '/audio/island.mp3',
+  },
+  {
+    thumbnail_image: [
+      '/images/unity/community/education_image.png',
+      '/images/unity/community/education_image_2.png',
+      '/images/unity/community/education_image_3.png',
+      '/images/unity/community/education_image_4.png',
+      '/images/unity/community/education_image_5.png',
+    ],
+    title: '교육기부 메타버스 타운',
+    sub_title: '각 기업들의 메타버스 체험관',
+    description:
+      '각 기업들의 메타버스로 들어가서 체험을 해보고 관심사 혹은 적성을 찾아보세요!',
+    tag: ['비슷한관심사', '집단상담', '이해와공감', '상호작용'],
+    path: 'https://zep.us/play/25KkNv',
+  },
+  {
+    thumbnail_image: [
+      '/images/unity/community/guide_image.png',
+      '/images/unity/community/guide_image_2.png',
+      '/images/unity/community/guide_image_3.png',
+      '/images/unity/community/guide_image_4.png',
+      '/images/unity/community/guide_image_5.png',
+    ],
+    title: '교사용 지도서 메뉴얼',
+    sub_title: '학술자료를 바탕으로 직접 제작된 교사용 지도서 메뉴얼',
+    description:
+      '듀코젠에서 학술자료를 바탕으로 직접 제작된 교사용 지도서 메뉴얼을 활용하여 수업을 진행해보세요!',
+    tag: ['비슷한관심사', '집단상담', '이해와공감', '상호작용'],
+    path: 'https://docs.google.com/presentation/d/1megkaunNw2clhxaiuMGZf3HqaeFaRiX4ggmHcOFRpN0/edit?usp=sharing',
   },
 ]
 
@@ -502,7 +530,7 @@ export const tutorialTraining = [
     text: '만약, 상담을 종료하고 나가고 싶으면 이 아이콘을 누르면 됩니다.',
   },
   {
-    text: '자 이제 저의 설명은 모두 끝이 났어요. 이제 본격적으로 이야기를 들어볼까요?',
+    text: '자 이제 저의 설명은 모두 끝이 났어요, 이제 본격적으로 이야기를 들어볼까요?',
     select: ['시작하기'],
   },
 ]

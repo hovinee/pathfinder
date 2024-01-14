@@ -45,8 +45,6 @@ const ChooseCounselingModal = ({
     ])
     tutorialStep !== 5 && sendToGPT(selectMesssage)
     tutorialStep === 5 && setTutorialStep((prev) => prev + 1),
-      tutorialStep === 5 &&
-        sendtoUnity('MessageReceiver', 'OnClickedButton', 'gpt_discard')
     setSelectCounseling(true), setOpenMenu(false)
   }
 
