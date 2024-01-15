@@ -17,7 +17,7 @@ import { TTutorial } from '@/utils/types'
 import UserHistory from '@/components/unity-ui/user-history/UserHistory'
 import { ReactUnityEventParameter } from 'react-unity-webgl/distribution/types/react-unity-event-parameters'
 import AnalysisModal from '@/components/unity-ui/modal/AnalysisModal'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import DignosisModal from '@/components/unity-ui/modal/DignosisModal'
 import CounselingHistory from '@/components/unity-ui/counseling-history/CounselingHistory'
@@ -25,6 +25,7 @@ import { tutorial, tutorialTraining } from '@/data/unity/data'
 
 const CounselPage = () => {
   const path = usePathname().split('/').pop()
+
   //unity build
   const {
     unityProvider,
@@ -138,7 +139,7 @@ const CounselPage = () => {
     ) {
       setChat((prevArray) => {
         const lastItem = prevArray[prevArray.length - 1]
-        lastItem.select = ['AI조언 구하기']
+        lastItem.select = ['AI조언 구하기', '예시 답변']
         return [...prevArray]
       })
     } else if (getAdvise) {
