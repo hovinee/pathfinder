@@ -20,7 +20,7 @@ interface TProps {
   tutorialStep: number
   wantCounseling: number
   roomMood: (num: number) => void
-  letsDance: () => void
+  sendToDance: () => void
   sendtoUnity: (
     gameObjectName: string,
     methodName: string,
@@ -36,7 +36,7 @@ const Menu = ({
   wantCounseling,
   setTutorialStep,
   roomMood,
-  letsDance,
+  sendToDance,
   setChat,
   sendtoUnity,
 }: TProps) => {
@@ -134,7 +134,7 @@ const Menu = ({
               if (tutorialStep === 7) {
                 setTutorialStep((num) => num + 1)
               } else {
-                letsDance()
+                sendToDance()
               }
             }}
           >

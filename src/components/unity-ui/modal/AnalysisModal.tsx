@@ -14,7 +14,7 @@ const AnalysisModal = () => {
     return () => clearInterval(intervalId) // 컴포넌트 언마운트 시 인터벌 클리어
   }, [])
   return (
-    <div className="absolute bottom-[3rem] left-0 right-0 mx-auto w-[30rem] rounded-lg bg-black p-[2rem]">
+    <div className="absolute bottom-[3rem] left-0 right-0 mx-auto w-[25rem] rounded-lg bg-black p-[2rem] text-center">
       <CSText size="21" color="white">
         입력중 입니다{dots}
       </CSText>

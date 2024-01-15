@@ -10,7 +10,6 @@ import { cfWorkerUrl } from '@/utils/url'
 import { connectToGPT } from '@/lib/gpt'
 import CounselingModal from '@/components/unity-ui/modal/CounselingModal'
 import HealingModal from '@/components/unity-ui/modal/HealingModal'
-import CSText from '@/components/ui/text/CSText'
 import AutoSizeImage from '@/components/ui/auto-size-image/AutoSizeImage'
 import Heart from '@/components/unity-ui/heart/Heart'
 import Progressbar from '@/components/progress/ProgressBar'
@@ -26,7 +25,6 @@ import { tutorial, tutorialTraining } from '@/data/unity/data'
 
 const CounselPage = () => {
   const path = usePathname().split('/').pop()
-  const router = useRouter()
   //unity build
   const {
     unityProvider,
@@ -70,13 +68,16 @@ const CounselPage = () => {
   //조언구하기
   const [getAdvise, setGetAdvise] = useState<boolean>(false)
 
+  //스트레스 지수
+  const [stress, setStress] = useState<number>(100)
+
   //보낸 메시지 쌓기
   const [stackMsg, setStackMsg] = useState<string[]>([])
   const systemMsg =
     path === 'trainer' ? switchingActor : counseling[wantCounseling]
 
   const sendToGPT = async (selectMessage?: string, who?: string) => {
-    console.log(systemMsg,'systemMsg')
+    console.log(systemMsg, 'systemMsg')
     const message = await connectToGPT(
       who ? who : systemMsg,
       selectMessage ? selectMessage : userMsg,
@@ -127,7 +128,7 @@ const CounselPage = () => {
         lastItem.select = tutorialTraining[tutorialTrainingStep]?.select
         return [...prevArray]
       })
-      if (tutorialTrainingStep === 4) {
+      if (tutorialTrainingStep === 6) {
         setTutorialTrainingStep(100)
       }
     } else if (
@@ -181,13 +182,24 @@ const CounselPage = () => {
   }
 
   //춤추기
-  const letsDance = () => {
+  const sendToDance = () => {
     sendMessage('MessageReceiver', 'OnClickedButton', 'spaceRoom_dancing')
   }
 
   //하트
   const sendToHeart = () => {
     sendMessage('MessageReceiver', 'OnClickedButton', 'spaceRoom_heart')
+  }
+
+  //박수
+  const sendToClap = () => {
+    sendMessage('MessageReceiver', 'OnClickedButton', 'trainer_flap')
+    setStress((num) => num - 1)
+  }
+  //커피
+  const sendToCoffee = () => {
+    sendMessage('MessageReceiver', 'OnClickedButton', 'trainer_coffee')
+    setStress((num) => num - 1)
   }
 
   useEffect(() => {
@@ -289,7 +301,7 @@ const CounselPage = () => {
                   setTutorialStep={setTutorialStep}
                   tutorialStep={tutorialStep}
                   roomMood={roomMood}
-                  letsDance={letsDance}
+                  sendToDance={sendToDance}
                   setChat={setChat}
                   sendtoUnity={sendMessage}
                 />
@@ -299,6 +311,8 @@ const CounselPage = () => {
               <CounselingHistory
                 tutorialTrainingStep={tutorialTrainingStep}
                 setTutorialTrainingStep={setTutorialTrainingStep}
+                sendToClap={sendToClap}
+                sendToCoffee={sendToCoffee}
               />
             )}
             <UnityHeader
@@ -340,6 +354,7 @@ const CounselPage = () => {
               stackMsg={stackMsg}
               setStackMsg={setStackMsg}
               setGetAdvise={setGetAdvise}
+              stress={stress}
             />
             {analysis && <AnalysisModal />}
           </>
