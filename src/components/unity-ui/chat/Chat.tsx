@@ -11,6 +11,7 @@ import { exampleJobs, tutorial, tutorialTraining } from '@/data/unity/data'
 import { AnimatePresence, motion, useAnimation } from 'framer-motion'
 import { ReactUnityEventParameter } from 'react-unity-webgl/distribution/types/react-unity-event-parameters'
 import { TTutorial } from '@/utils/types'
+import Thermometer from 'react-thermometer-component'
 
 interface TProps {
   sendToGPT: (message?: string, who?: string) => void
@@ -37,6 +38,7 @@ interface TProps {
   setGetAdvise: Dispatch<SetStateAction<boolean>>
   stackMsg: string[]
   setStackMsg: Dispatch<SetStateAction<string[]>>
+  stress: number
 }
 
 const Chat = ({
@@ -60,6 +62,7 @@ const Chat = ({
   stackMsg,
   setStackMsg,
   setGetAdvise,
+  stress,
 }: TProps) => {
   const [openJob, setOpenJob] = useState<boolean>(false)
   const messagesEndRef = useRef<HTMLDivElement | null>(null)
@@ -194,7 +197,27 @@ const Chat = ({
 
   return (
     <div className="absolute bottom-[4rem] right-[3.1rem] flex gap-[2rem]">
-      <div className="flex h-[calc(100vh-13rem)] gap-[1.2rem]">
+      <div className="flex h-[calc(100vh-13rem)] gap-[1.5rem]">
+        {path === 'trainer' && (
+          <div
+            className={clsx(
+              'flex h-full items-end',
+              tutorialTrainingStep === 3 || tutorialTrainingStep === 4
+                ? 'z-10'
+                : 'z-0',
+            )}
+          >
+            <Thermometer
+              theme="light"
+              value={stress}
+              max="100"
+              format="°C"
+              size="normal"
+              height="200"
+            />
+          </div>
+        )}
+
         <div className={clsx('flex w-[50rem] flex-col justify-end')}>
           <div
             className={clsx(

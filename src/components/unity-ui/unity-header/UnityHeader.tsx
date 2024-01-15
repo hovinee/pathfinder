@@ -44,7 +44,7 @@ const UnityHeader = ({
       onClick={() => {
         if (path === 'client' && tutorialStep === 12) {
           setTutorialStep(100)
-        } else if (path === 'trainer' && tutorialTrainingStep === 3) {
+        } else if (path === 'trainer' && tutorialTrainingStep === 5) {
           setTutorialTrainingStep((num) => num + 1)
         } else {
           goToLobby()
@@ -55,12 +55,12 @@ const UnityHeader = ({
         className={clsx(
           'relative w-[4.6rem] cursor-pointer',
           path === 'client' && tutorialStep === 12 && 'z-10',
-          path === 'trainer' && tutorialTrainingStep === 3 && 'z-10',
+          path === 'trainer' && tutorialTrainingStep === 5 && 'z-10',
         )}
       >
         <AutoSizeImage src="/images/unity/exit.png" full />
 
-        {(tutorialStep === 12 || tutorialTrainingStep === 3) && (
+        {(tutorialStep === 12 || tutorialTrainingStep === 5) && (
           <>
             <motion.div
               className={clsx('absolute right-[-5rem] top-[3.5rem] w-[7rem]')}
