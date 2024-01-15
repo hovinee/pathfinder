@@ -27,7 +27,6 @@ const UserHistory = ({
 }: TProps) => {
   const userChat = chat.filter((item) => item.who === 'user')
   const aiChat = chat.filter((item) => item.who === 'trainer')
-  const { data: user } = useSession()
   const controls = useAnimation()
 
   useEffect(() => {
@@ -54,15 +53,17 @@ const UserHistory = ({
       <div className="custom-scrollbar h-[42.1rem] w-[40rem] overflow-auto rounded-[1rem] bg-181818 px-[2rem] pt-[2rem] ">
         <div className="flex gap-[1.3rem] border-b border-b-[#2E3033] pb-[2rem]">
           <AutoSizeImage
-            src={'/images/unity/nara_profile.png'}
+            src={
+              path === 'client'
+                ? '/images/unity/nara_profile.png'
+                : '/images/unity/trainer_poor.png'
+            }
             rounded="10"
             className={'h-[5.8rem] w-[5.8rem] '}
           />
           <div className="flex flex-col ">
             <CSText size="16" color="white">
-              {path === 'client'
-                ? 'AI 상담사 나라'
-                : `교육생 ${user?.user?.name}`}
+              {path === 'client' ? 'AI 상담사 나라' : '교육생'}
             </CSText>
             <CSText size="20" color="white" className="mt-[0.3rem]">
               {path === 'client' ? '일일 친구 상담소' : '일일 상담 훈련소'}

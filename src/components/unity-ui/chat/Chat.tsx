@@ -66,7 +66,36 @@ const Chat = ({
 }: TProps) => {
   const [openJob, setOpenJob] = useState<boolean>(false)
   const messagesEndRef = useRef<HTMLDivElement | null>(null)
+  const [chatNum, setChatNum] = useState<number>(0)
+  const [trainerNum, setTrainerNum] = useState<number>(0)
 
+  const sendMessage = (example?: any) => {
+    if (userMsg && path === 'client') {
+      sendToGPT()
+      setChat((prevMessages) => [
+        ...prevMessages,
+        { text: userMsg, who: 'user' },
+      ])
+      setAnalysis(true)
+      setAiMsg('')
+      setUserMsg('')
+    }
+    if (path === 'trainer' && example) {
+      const trainerPoor = [
+        '돈 때문에 막막하고, 미술 학원도 다니기 힘들어서 기술이 부족하다는 느낌이 들어요. 그래서 미술가가 될 수 있을지 걱정이에요.',
+        '그럴 수 있을까요?',
+        '상담 감사합니다. 선생님 덕분에 용기가 생겼어요!',
+      ]
+      sendtoUnity(
+        'MessageReceiver',
+        'OnProcess',
+        `gptmsg-trainer-poor:${trainerPoor[chatNum]}`,
+      )
+
+      setChatNum((num) => num + 1)
+    }
+  }
+  console.log(stackMsg)
   const selectTutorial = (msg: string) => {
     if (path === 'trainer' && tutorialTrainingStep !== 100) {
       setTutorialTrainingStep((num) => num + 1)
@@ -85,13 +114,29 @@ const Chat = ({
     }
 
     if (msg === 'AI조언 구하기') {
-      console.log(stackMsg.join(''))
       setSwitchingActor('trainer')
       sendToGPT(stackMsg.join(''), 'trainer')
       setAnalysis(true)
       setAiMsg('')
       setStackMsg([])
       setGetAdvise(true)
+    }
+
+    if (msg === '예시 답변') {
+      const trainer = [
+        '정말 힘든 상황이시군요. 미술가로서의 꿈을 펼치려면 여러 어려움이 있을 텐데, 어떤 부분이 가장 힘들게 느껴지나요?',
+        '돈 때문에 힘들어하는 것 이해해요. 그런데 미술을 좋아하고 꾸준히 연습한다면 다양한 경로를 통해 성장할 수 있을 거예요. 돈 문제는 조금씩 극복해나가는 거니까, 지금은 작은 단계부터 시작해보는 것도 좋을 것 같아요.',
+        '그런 부분에 대한 대처 방안을 함께 고민해보세요. 무료 자료, 온라인 강의, 그리고 자기주도적인 학습에 대한 가능성을 알아보면 좋을 것 같아요. 그리고 그것을 내담자님에게 알려주어 자신감을 북돋우는 것도 중요합니다.',
+      ]
+      if (trainerNum < 3) {
+        setChat((prevMessages) => [
+          ...prevMessages,
+          { text: trainer[trainerNum], who: 'user' },
+        ])
+      }
+      sendMessage(true)
+      setTrainerNum((num) => num + 1)
+      setStackMsg([])
     }
   }
 
@@ -120,19 +165,6 @@ const Chat = ({
     setAiMsg('')
     setAnalysis(false)
     sendtoUnity('MessageReceiver', 'OnClickedButton', 'gpt_discard')
-  }
-
-  const sendMessage = () => {
-    if (userMsg) {
-      sendToGPT()
-      setChat((prevMessages) => [
-        ...prevMessages,
-        { text: userMsg, who: 'user' },
-      ])
-      setAnalysis(true)
-      setAiMsg('')
-      setUserMsg('')
-    }
   }
 
   const exampleJob = (message: string) => {
@@ -167,7 +199,6 @@ const Chat = ({
 
   useEffect(() => {
     if ((tutorialStep || tutorialTrainingStep) < 100) {
-      console.log(tutorialStep)
       if (path === 'client') {
         sendtoUnity(
           'MessageReceiver',
@@ -237,7 +268,7 @@ const Chat = ({
                           path === 'trainer' && who === 'trainer'
                             ? '/images/unity/advisor_profile.png'
                             : path === 'trainer' && who === 'trainer-poor'
-                              ? '/images/unity/nara_profile.png'
+                              ? '/images/unity/trainer_poor.png'
                               : '/images/unity/nara_profile.png'
                         }
                         className="h-[6.8rem] min-w-[6.8rem]"
