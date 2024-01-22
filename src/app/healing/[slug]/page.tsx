@@ -26,6 +26,7 @@ const HealingPage = () => {
     loadingProgression,
     isLoaded,
     sendMessage,
+    unload,
   } = useUnityContext({
     loaderUrl: `${cfWorkerUrl}/Build/${path}/Build.loader.js`,
     dataUrl: `${cfWorkerUrl}/Build/${path}/Build.data`,
@@ -90,7 +91,7 @@ const HealingPage = () => {
       )
     }
     reponseToUnity()
-  }, [OnRequest])
+  }, [getApi, getParam])
 
   useEffect(() => {
     addEventListener('OnSceneClosingEnd', OnSceneClosingEnd)
@@ -142,7 +143,9 @@ const HealingPage = () => {
               'absolute left-[3rem] top-[3rem] w-[4.6rem] cursor-pointer',
               splashEnd ? 'block' : 'hidden',
             )}
-            onClick={() => window.close()}
+            onClick={() => {
+              unload(), window.close()
+            }}
           >
             <AutoSizeImage src="/images/unity/exit.png" full />
           </div>
