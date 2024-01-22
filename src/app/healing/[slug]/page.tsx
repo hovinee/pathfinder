@@ -66,7 +66,7 @@ const HealingPage = () => {
   }, [])
 
   useEffect(() => {
-    const test = async () => {
+    const reponseToUnity = async () => {
       let result
       if (getApi == 'get/feeds') {
         result = await getFeeds(JSON.parse(getParam).world)
@@ -89,8 +89,8 @@ const HealingPage = () => {
           `${getApi}|${result?.status}|${JSON.stringify(await result?.json())}`,
       )
     }
-    test()
-  }, [getApi, getParam])
+    reponseToUnity()
+  }, [OnRequest])
 
   useEffect(() => {
     addEventListener('OnSceneClosingEnd', OnSceneClosingEnd)
