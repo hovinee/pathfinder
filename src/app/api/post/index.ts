@@ -49,24 +49,20 @@ export const writeFeed = async (param: string) => {
       cache: 'no-cache',
       body: JSON.stringify(dto),
     })
-    const result = await res.json()
-    console.log(result)
-    return result
+    return res
   } catch (err: any) {
     console.log(err.message)
   }
 }
 
 // 특정 월드의 모든 게시글 조회
-export const getFeeds = async () => {
+export const getFeeds = async (world: string) => {
   try {
-    var res = await fetch(`${getBaseUrl}/api/get/feeds/?world=train`, {
+    var res = await fetch(`${getBaseUrl}/api/get/feeds?world=${world}`, {
       method: 'GET',
       cache: 'no-cache',
     })
-    const result = await res.json()
-    console.log(result)
-    return result
+    return res
   } catch (err: any) {
     console.log(err.message)
   }
@@ -101,9 +97,7 @@ export const updateFeedLike = async (param: string) => {
       cache: 'no-cache',
       body: JSON.stringify(dto),
     })
-    const result = await res.json()
-    console.log(result)
-    return result
+    return res
   } catch (err: any) {
     console.log(err.message)
   }
@@ -122,9 +116,7 @@ export const writeComment = async (param: string) => {
       cache: 'no-cache',
       body: JSON.stringify(dto),
     })
-    const result = await res.json()
-    console.log(result)
-    return result
+    return res
   } catch (err: any) {
     console.log(err.message)
   }

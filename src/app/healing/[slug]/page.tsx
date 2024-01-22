@@ -69,7 +69,7 @@ const HealingPage = () => {
     const test = async () => {
       let result
       if (getApi == 'get/feeds') {
-        result = await getFeeds()
+        result = await getFeeds(JSON.parse(getParam).world)
       }
       if (getApi == 'post/new-feed') {
         console.log('post/new-feed')
@@ -84,9 +84,9 @@ const HealingPage = () => {
         result = await writeComment(getParam)
       }
       sendMessage(
-        'MessageReceiver',
-        'OnResponse',
-        `${getApi}|${JSON.stringify(result)}`,
+          'MessageReceiver',
+          'OnResponse',
+          `${getApi}|${result?.status}|${JSON.stringify(await result?.json())}`,
       )
     }
     test()
