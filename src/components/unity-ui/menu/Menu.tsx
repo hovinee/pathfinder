@@ -144,7 +144,7 @@ const Menu = ({
               <>
                 <motion.div
                   className={clsx(
-                    'absolute right-[-5rem] top-[-6.5rem] w-[7rem] ',
+                    'absolute right-[-5rem] top-[-6.5rem] w-[7rem]',
                   )}
                   animate={controls}
                 >
