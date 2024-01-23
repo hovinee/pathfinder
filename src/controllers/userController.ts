@@ -85,7 +85,7 @@ export const sendValidationCodeToUser = async (req: NextRequest) => {
     const validationCode = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
     const codeIssuedUser = await updateUserByEmail(email, { validationCode })
     console.log(email, 'email')
-    sendValidationMailTo(email, validationCode)
+    await sendValidationMailTo(email, validationCode)
     return ResponseHelper.success()
   } catch (err: any) {
     console.log(err.message)
