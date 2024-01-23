@@ -1,6 +1,6 @@
 import { createTransport } from 'nodemailer'
 
-export const sendValidationMailTo = (email: string, code: number) => {
+export const sendValidationMailTo = async (email: string, code: number) => {
   const context =
     'Hello.\nSomeone just signed up for Ducogen using this email address.\nIf this is you, enter the following code to verify your email.\ncode:'
 
@@ -11,7 +11,7 @@ export const sendValidationMailTo = (email: string, code: number) => {
     text: `\n${context} ${code}\n\nThank you. by Ducogen.`, // 이메일 본문
   }
 
-  return createTransport({
+  return await createTransport({
     host: 'smtp.worksmobile.com',
     port: 587,
     secure: false,
