@@ -8,6 +8,7 @@ import AutoSizeImage from '@/components/ui/auto-size-image/AutoSizeImage'
 import { cfWorkerUrl } from '@/utils/url'
 import Progressbar from '@/components/progress/ProgressBar'
 import {
+  deleteComment, deleteFeed,
   getFeeds,
   updateFeedLike,
   writeComment,
@@ -83,6 +84,14 @@ const HealingPage = () => {
       if (getApi == 'post/new-comment') {
         console.log('post/new-comment')
         result = await writeComment(getParam)
+      }
+      if (getApi == 'post/delete-comment') {
+        console.log('post/delete-comment')
+        result = await deleteComment(getParam)
+      }
+      if (getApi == 'post/delete-feed') {
+        console.log('post/delete-comment')
+        result = await deleteFeed(getParam)
       }
       sendMessage(
           'MessageReceiver',

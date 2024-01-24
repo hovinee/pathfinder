@@ -63,9 +63,6 @@ export async function createFeed(req: NextRequest) {
     const user: UserDoc = await findUserByEmail(email)
     if (!user) return ResponseHelper.error('user not found', 404)
 
-    const existFeed = await findFeedByAuthorWorld(user._id, reqData.world)
-    if (existFeed) return ResponseHelper.error('feed already exist', 402, 1100)
-
     const newFeed = await insertFeed({
       author: user._id,
       comments: [],

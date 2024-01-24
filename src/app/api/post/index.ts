@@ -1,5 +1,5 @@
-import { AddCommentDTO } from '@/models/comment'
-import { AddFeedDTO, UpdateFeedLikeDTO } from '@/models/feed'
+import {AddCommentDTO, DeleteCommentDTO, UpdateCommentLikeDTO, UpdateCommentMsgDTO} from '@/models/comment'
+import {AddFeedDTO, DeleteFeedDTO, UpdateFeedLikeDTO} from '@/models/feed'
 import { getBaseUrl } from '@/utils/url'
 
 export const signCourse = async (uid: string): Promise<Response> => {
@@ -123,67 +123,75 @@ export const writeComment = async (param: string) => {
 }
 
 // 댓글 좋아요
-// try {
-//   const dto: UpdateCommentLikeDTO = {
-//     id: '659c9f2e5dcbbf4f22806795',
-//     isLike: true,
-//   }
-//   var res = await fetch(`${getBaseUrl}/api/post/update-comment-like`, {
-//     method: 'POST',
-//     cache: 'no-cache',
-//     headers: headers(),
-//     body: JSON.stringify(dto),
-//   })
-//   console.log(await res.json())
-// } catch (err: any) {
-//   console.log(err.message)
-// }
+export const updateCommentLike = async (param: string) => {
+try {
+  const { id, isLike } = JSON.parse(param)
+  const dto: UpdateCommentLikeDTO = {
+    id: id,
+    isLike: isLike,
+  }
+  var res = await fetch(`${getBaseUrl}/api/post/update-comment-like`, {
+    method: 'POST',
+    cache: 'no-cache',
+    body: JSON.stringify(dto),
+  })
+  return res
+} catch (err: any) {
+  console.log(err.message)
+}
+}
 
 // 댓글 수정
-// try {
-//   const dto: UpdateCommentMsgDTO = {
-//     id: '659c9f2e5dcbbf4f22806795',
-//     message: 'asdkjflkasdjfklasjkdlfjklas',
-//   }
-//   var res = await fetch(`${getBaseUrl}/api/post/update-comment-msg`, {
-//     method: 'POST',
-//     cache: 'no-cache',
-//     headers: headers(),
-//     body: JSON.stringify(dto),
-//   })
-//   console.log(await res.json())
-// } catch (err: any) {
-//   console.log(err.message)
-// }
+export const updateCommentMsg = async (param: string) => {
+  try {
+    const {id, message} = JSON.parse(param)
+    const dto: UpdateCommentMsgDTO = {
+      id: id,
+      message: message,
+    }
+    var res = await fetch(`${getBaseUrl}/api/post/update-comment-msg`, {
+      method: 'POST',
+      cache: 'no-cache',
+      body: JSON.stringify(dto),
+    })
+    return res
+  } catch (err: any) {
+    console.log(err.message)
+  }
+}
 
 // 댓글 삭제
-// try {
-//   const dto: DeleteCommentDTO = {
-//     id: '659ca91c5dcbbf4f22806aae',
-//   }
-//   var res = await fetch(`${getBaseUrl}/api/post/delete-comment`, {
-//     method: 'POST',
-//     cache: 'no-cache',
-//     headers: headers(),
-//     body: JSON.stringify(dto),
-//   })
-//   console.log(await res.json())
-// } catch (err: any) {
-//   console.log(err.message)
-// }
+export const deleteComment = async (param: string) => {
+  try {
+    const {id} = JSON.parse(param)
+    const dto: DeleteCommentDTO = {
+      id: id,
+    }
+    var res = await fetch(`${getBaseUrl}/api/post/delete-comment`, {
+      method: 'POST',
+      cache: 'no-cache',
+      body: JSON.stringify(dto),
+    })
+    return res
+  } catch (err: any) {
+    console.log(err.message)
+  }
+}
 
 // 게시글 삭제
-// try {
-//   const dto: DeleteFeedDTO = {
-//     id: '659beef58c914035572f7226',
-//   }
-//   var res = await fetch(`${getBaseUrl}/api/post/delete-feed`, {
-//     method: 'POST',
-//     cache: 'no-cache',
-//     headers: headers(),
-//     body: JSON.stringify(dto),
-//   })
-//   console.log(await res.json())
-// } catch (err: any) {
-//   console.log(err.message)
-// }
+export const deleteFeed = async (param: string) => {
+  try {
+    const {id} = JSON.parse(param)
+    const dto: DeleteFeedDTO = {
+      id: id,
+    }
+    var res = await fetch(`${getBaseUrl}/api/post/delete-feed`, {
+      method: 'POST',
+      cache: 'no-cache',
+      body: JSON.stringify(dto),
+    })
+    return res
+  } catch (err: any) {
+    console.log(err.message)
+  }
+}
