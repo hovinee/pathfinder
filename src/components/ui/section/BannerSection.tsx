@@ -16,13 +16,13 @@ const BannerSection = ({ children, image_url, lecture }: Props) => {
   return (
     <section
       className={clsx(
-        'h-[50rem] xl:h-full',
         lecture && 'lg:h-[64rem] xl:h-[64rem]',
         path === '/' ? 'mt-0' : 'mt-[8.4rem]',
+        path !== '/' ? 'h-[50rem] xl:h-full' : 'h-full',
       )}
     >
       <div className="relative h-full w-full">
-        <AutoSizeImage src={image_url} full priority />
+        <AutoSizeImage src={image_url} full objectCover priority />
         {children}
       </div>
     </section>

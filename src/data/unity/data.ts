@@ -226,11 +226,11 @@ export const thumbnailHealing = [
   },
   {
     thumbnail_image: [
-      '/images/unity/healing/food_image.png',
-      '/images/unity/healing/food_image_2.png',
-      '/images/unity/healing/food_image_3.png',
-      '/images/unity/healing/food_image_4.png',
-      '/images/unity/healing/food_image_5.png',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/90dbd24d-359b-44a3-26ab-36f6b7277c00/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/3c015c24-6cfa-4a05-8a85-b1ee8048fb00/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/0daf61b1-9ca0-4033-4dc7-22d8a9e7b300/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/70b358fd-b645-4b16-a03d-570a8e3f3600/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/e2d09eb8-eae8-4cce-88d0-d769b3b4ce00/public',
     ],
     title: '푸드마켓',
     sub_title: '겁이 많지만 협동심이 강한 나',

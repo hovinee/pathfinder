@@ -55,8 +55,8 @@ const AutoSizeImage = ({
           alt=""
           priority={priority}
           onClick={onClick}
-          // placeholder="blur"
-          // blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkWNFWDwADjQGvE/U7HAAAAABJRU5ErkJggg=="
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMU5OOrBwABEwCuVmZc3wAAAABJRU5ErkJggg=="
         />
       ) : (
         <div className={clsx('relative', className)} onClick={onClick}>
@@ -71,8 +71,8 @@ const AutoSizeImage = ({
             )}
             alt=""
             priority={priority}
-            // placeholder="blur"
-            // blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkWNFWDwADjQGvE/U7HAAAAABJRU5ErkJggg=="
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMU5OOrBwABEwCuVmZc3wAAAABJRU5ErkJggg=="
           />
         </div>
       )}
