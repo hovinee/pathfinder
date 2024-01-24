@@ -83,11 +83,11 @@ export const thumbnailHealing = [
   },
   {
     thumbnail_image: [
-      '/images/unity/healing/station_thumbnail.png',
-      '/images/unity/healing/station_image.png',
-      '/images/unity/healing/station_image_2.png',
-      '/images/unity/healing/station_image_3.png',
-      '/images/unity/healing/station_image_4.png',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/b0aa5803-1fcf-455e-46f1-da612d90aa00/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/d038ffe7-4e0e-46c1-2084-df2f85a29a00/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/6b37474f-1aaf-450f-eb0e-5c3ed9276600/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/8b2aef11-777b-44ca-838e-d40cbda99d00/public',
+      'https://imagedelivery.net/8bL_DmW332yquDyMdhD8rg/8cf41e31-6ab3-4336-8c48-7674f9498300/public',
     ],
     title: '가인역',
     sub_title: '꿈과 희망의 역으로 향하는 행복기차',
