@@ -54,7 +54,7 @@ const MainMenu = () => {
 
   return (
     <nav className="mt-[2rem] md:mt-0">
-      <ul className="grid grid-cols-2 md:block">
+      <ul className="grid grid-cols-3 md:block">
         {menu.map(({ id, label, path, submenu }, index) => {
           return (
             <li
