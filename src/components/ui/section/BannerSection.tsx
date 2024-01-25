@@ -18,7 +18,7 @@ const BannerSection = ({ children, image_url, lecture }: Props) => {
       className={clsx(
         lecture && 'lg:h-[64rem] xl:h-[64rem]',
         path === '/' ? 'mt-0' : 'mt-[8.4rem]',
-        path !== '/' ? 'h-[50rem] xl:h-full' : 'h-full',
+        path !== '/' ? 'h-[50rem] xl:h-full' : 'h-[40rem] md:h-full',
       )}
     >
       <div className="relative h-full w-full">

@@ -53,14 +53,14 @@ const MainMenu = () => {
   const router = useRouter()
 
   return (
-    <nav>
-      <ul>
+    <nav className="mt-[2rem] md:mt-0">
+      <ul className="grid grid-cols-2 md:block">
         {menu.map(({ id, label, path, submenu }, index) => {
           return (
             <li
               key={id}
               className={clsx(
-                'group relative inline-flex items-center px-[3rem]',
+                'group relative inline-flex items-center px-[1rem] xl:px-[3rem]',
               )}
               role="none"
               onClick={() => {
@@ -78,7 +78,7 @@ const MainMenu = () => {
                 path={path}
                 className="relative hover:opacity-50"
               >
-                <CSText size="14" color="white" weight="medium">
+                <CSText size="12 xl:14" color="white" weight="medium">
                   {label}
                 </CSText>
               </NavLink>
