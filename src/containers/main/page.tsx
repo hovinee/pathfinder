@@ -45,29 +45,32 @@ const MainArea = () => {
   const [category, setCategory] = useState<number>(0)
 
   return (
-    <div className="relative mx-auto mt-[-10rem] rounded-lg px-[9rem] pb-[10rem]">
+    <div className="relative mx-auto mt-[5rem] rounded-lg px-[2rem] pb-[10rem] lg:mt-0 lg:px-[9rem]">
       <CSText size="31" color="white" weight="bold">
         바로가기
       </CSText>
+
       {curationCategory.map((title, index) => (
-        <div
-          key={index}
-          className={clsx(
-            'ml-[0.6rem] mt-[1rem] inline-block cursor-pointer rounded-full border border-black p-[1rem]',
-            category === index ? 'bg-00A886' : 'bg-white',
-          )}
-          onClick={() => setCategory(index)}
-        >
-          <CSText
-            size="14"
+        <>
+          <div
+            key={index}
             className={clsx(
-              category === index ? 'text-white' : 'text-[#5E6066]',
+              'ml-[0.6rem] mt-[1rem] inline-block cursor-pointer rounded-full border border-black p-[1rem]',
+              category === index ? 'bg-00A886' : 'bg-white',
             )}
-            weight="bold"
+            onClick={() => setCategory(index)}
           >
-            {title}
-          </CSText>
-        </div>
+            <CSText
+              size="14"
+              className={clsx(
+                category === index ? 'text-white' : 'text-[#5E6066]',
+              )}
+              weight="bold"
+            >
+              {title}
+            </CSText>
+          </div>
+        </>
       ))}
       <div className="mt-[10rem] flex flex-col gap-[10rem]">
         {curation.map(({ title, description }, index) => (

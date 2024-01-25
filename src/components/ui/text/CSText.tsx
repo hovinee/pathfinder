@@ -27,9 +27,11 @@ const fontSize: StringProps = {
   '35': 'text-35',
   '60': 'text-60',
   '12 xl:14': 'text-12 xl:text-14',
+  '12 md:18': 'text-12 md:text-18',
   '12 xl:18': 'text-12 xl:text-18',
   '15 xl:23': 'text-15 xl:text-23',
   '21 xl:31': 'text-21 xl:text-31',
+  '21 md:35': 'text-21 md:text-35',
   '37 xl:54': 'text-37 xl:text-54',
 }
 

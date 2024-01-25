@@ -55,11 +55,9 @@ export default function RootLayout({
         )}
       >
         <AuthProvider>
-          <DeviceProvider deviceInfo={deviceInfo}>
-            <Header />
-            {children}
-            <Footer />
-          </DeviceProvider>
+          <Header />
+          {children}
+          <Footer />
         </AuthProvider>
       </body>
     </html>
