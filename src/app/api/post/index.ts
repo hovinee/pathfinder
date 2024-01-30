@@ -1,5 +1,5 @@
 import {AddCommentDTO, DeleteCommentDTO, UpdateCommentLikeDTO, UpdateCommentMsgDTO} from '@/models/comment'
-import {AddFeedDTO, DeleteFeedDTO, UpdateFeedLikeDTO} from '@/models/feed'
+import {AddFeedDTO, DeleteFeedDTO, UpdateFeedLikeDTO, UpdateFeedMsgDTO} from '@/models/feed'
 import { getBaseUrl } from '@/utils/url'
 
 export const signCourse = async (uid: string): Promise<Response> => {
@@ -68,21 +68,23 @@ export const getFeeds = async (world: string) => {
   }
 }
 // 게시글 글 수정
-// try {
-//   const dto: UpdateFeedMsgDTO = {
-//     id: '659bb6141b6fe09194bc1920',
-//     message: 'test!!!',
-//   }
-//   var res = await fetch(`${getBaseUrl}/api/post/update-feed-msg`, {
-//     method: 'POST',
-//     cache: 'no-cache',
-//     headers: headers(),
-//     body: JSON.stringify(dto),
-//   })
-//   console.log(await res.json())
-// } catch (err: any) {
-//   console.log(err.message)
-// }
+export const updateFeedMsg = async (param: string) => {
+  try {
+    const { id, message } = JSON.parse(param)
+    const dto: UpdateFeedMsgDTO = {
+      id: id,
+      message: message,
+    }
+    var res = await fetch(`${getBaseUrl}/api/post/update-feed-msg`, {
+      method: 'POST',
+      cache: 'no-cache',
+      body: JSON.stringify(dto),
+    })
+    console.log(await res.json())
+  } catch (err: any) {
+    console.log(err.message)
+  }
+}
 
 // 게시글 좋아요 수정
 export const updateFeedLike = async (param: string) => {
@@ -124,21 +126,21 @@ export const writeComment = async (param: string) => {
 
 // 댓글 좋아요
 export const updateCommentLike = async (param: string) => {
-try {
-  const { id, isLike } = JSON.parse(param)
-  const dto: UpdateCommentLikeDTO = {
-    id: id,
-    isLike: isLike,
+  try {
+    const {id, isLike} = JSON.parse(param)
+    const dto: UpdateCommentLikeDTO = {
+      id: id,
+      isLike: isLike,
+    }
+    var res = await fetch(`${getBaseUrl}/api/post/update-comment-like`, {
+      method: 'POST',
+      cache: 'no-cache',
+      body: JSON.stringify(dto),
+    })
+    return res
+  } catch (err: any) {
+    console.log(err.message)
   }
-  var res = await fetch(`${getBaseUrl}/api/post/update-comment-like`, {
-    method: 'POST',
-    cache: 'no-cache',
-    body: JSON.stringify(dto),
-  })
-  return res
-} catch (err: any) {
-  console.log(err.message)
-}
 }
 
 // 댓글 수정

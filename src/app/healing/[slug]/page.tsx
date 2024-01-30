@@ -9,8 +9,8 @@ import { cfWorkerUrl } from '@/utils/url'
 import Progressbar from '@/components/progress/ProgressBar'
 import {
   deleteComment, deleteFeed,
-  getFeeds,
-  updateFeedLike,
+  getFeeds, updateCommentLike, updateCommentMsg,
+  updateFeedLike, updateFeedLikeMsg, updateFeedMsg,
   writeComment,
   writeFeed,
 } from '@/app/api/post'
@@ -73,25 +73,41 @@ const HealingPage = () => {
       if (getApi == 'get/feeds') {
         result = await getFeeds(JSON.parse(getParam).world)
       }
-      if (getApi == 'post/new-feed') {
+      else if (getApi == 'post/new-feed') {
         console.log('post/new-feed')
         result = await writeFeed(getParam)
       }
-      if (getApi == 'post/update-feed-like') {
+      else if (getApi == 'post/update-feed-like') {
         console.log('post/update-feed-like')
         result = await updateFeedLike(getParam)
       }
-      if (getApi == 'post/new-comment') {
+      else if (getApi == 'post/new-comment') {
         console.log('post/new-comment')
         result = await writeComment(getParam)
       }
-      if (getApi == 'post/delete-comment') {
+      else if (getApi == 'post/delete-comment') {
         console.log('post/delete-comment')
         result = await deleteComment(getParam)
       }
-      if (getApi == 'post/delete-feed') {
-        console.log('post/delete-comment')
+      else if (getApi == 'post/delete-feed') {
+        console.log('post/delete-feed')
         result = await deleteFeed(getParam)
+      }
+      else if (getApi == 'post/update-feed-msg') {
+        console.log('post/update-feed-msg')
+        result = await updateFeedMsg(getParam)
+      }
+      else if (getApi == 'post/update-feed-like') {
+        console.log('post/update-feed-like')
+        result = await updateFeedLike(getParam)
+      }
+      else if (getApi == 'post/update-comment-like') {
+        console.log('post/update-comment-like')
+        result = await updateCommentLike(getParam)
+      }
+      else if (getApi == 'post/update-comment-msg') {
+        console.log('post/update-comment-msg')
+        result = await updateCommentMsg(getParam)
       }
       sendMessage(
           'MessageReceiver',
