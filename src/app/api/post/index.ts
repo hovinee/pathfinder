@@ -80,7 +80,7 @@ export const updateFeedMsg = async (param: string) => {
       cache: 'no-cache',
       body: JSON.stringify(dto),
     })
-    console.log(await res.json())
+    return res
   } catch (err: any) {
     console.log(err.message)
   }
