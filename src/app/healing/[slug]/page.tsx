@@ -10,7 +10,7 @@ import Progressbar from '@/components/progress/ProgressBar'
 import {
   deleteComment, deleteFeed,
   getFeeds, updateCommentLike, updateCommentMsg,
-  updateFeedLike, updateFeedLikeMsg, updateFeedMsg,
+  updateFeedLike, updateFeedMsg,
   writeComment,
   writeFeed,
 } from '@/app/api/post'
